@@ -477,10 +477,12 @@ class Main extends CI_Controller {
 		$style['basePathCss']=basePathCss;
 		$style['basePathJs']=basePathJs;
 		$this->load->view('header',$style);
+		//need to refactoring
 		$this->load->view('cabinet/cab_menu');
-		$this->load->view('cabinet/cab_query',$data);
-		$this->load->view('cabinet/cab_setting',$person);
+		$this->load->view('cabinet/cab_query', $data);
+		$this->load->view('cabinet/cab_setting', $person);
 		$this->load->view('change_password_view');
+		//end of refactoring
 		$this->load->view('footer');
 	}
 

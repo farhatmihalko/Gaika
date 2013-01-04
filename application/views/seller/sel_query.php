@@ -179,7 +179,7 @@
 		<!--end of form-->
 	</div>
 	<div class="row">
-		<!--form to find some parts-->
+		<!--form to help-->
 		<form action="" method="POST">
 			<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-seller-help-find">
 				<div class="close-button"></div>
