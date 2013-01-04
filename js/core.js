@@ -74,4 +74,10 @@ $(document).ready(function(){
 			return false;
 		})
 	});
+	
+	uiGarbase();
 });
+
+function uiGarbase(){
+
+}

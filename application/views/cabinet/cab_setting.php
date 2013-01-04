@@ -4,7 +4,7 @@
 			<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-user-settings">
 				<div class="close-button"></div>
 				
-				<div>
+				<div class="row">
 					<!--Main settings-->
 					<h4 class="line-after font-color-l-blue font-size-13">
 						<i class="icon-exchange pad-right"></i>Настройки профиля - Смена персональных данных
@@ -46,7 +46,7 @@
 					<!--End of main settings-->
 				</div>
 
-				<div>
+				<div class="row">
 					<!--Change password-->
 					<h4 class="line-after font-color-l-blue font-size-13">
 						<i class="icon-lock pad-right"></i>Настройки профиля - Смена пароля
