@@ -1,0 +1,341 @@
+/*
+  MAIN INPUTS
+*/
+input, button, textarea {
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius:2px;
+  border-color:#ccc;
+  margin:0;
+  color:#444;
+  -webkit-box-shadow:none;
+  -moz-box-shadow:none;
+  box-shadow:none;
+  -moz-transition: border-color 0.25s;
+  -ms-transition: border-color 0.25s;
+  -o-transtion: border-color 0.25s;
+  -webkit-transition: border-color 0.25s;
+  transition: border-color 0.25s;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+input:focus, select{
+  outline: none;
+  background : rgb(253,253,253);
+  border-color:#aaa;
+  -moz-box-shadow: 0 0 2px #ddd;
+  -ms-box-shadow: 0 0 2px #ddd;
+  -o-box-shadow: 0 0 2px #ddd;
+  -webkit-box-shadow: 0 0 2px #ddd;
+  box-shadow: 0 0 2px #ddd;
+}
+
+/*
+  BUTTONS
+*/
+.btn{
+  background: #F6F6F6;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: visible;
+  color: #555;
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 0 1px 0 white;
+  padding: 0.6em 1.5em;
+  border: 1px solid #CCC;
+  border-bottom-color: #AAA;
+  background-image: -moz-linear-gradient(top,#fff 0,#e0e0e0 100%);
+  background-image: -ms-linear-gradient(top,#fff 0,#e0e0e0 100%);
+  background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(100%,#e0e0e0));
+  background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+  background-image: linear-gradient(top,#fff 0,#e0e0e0 100%);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 0 1px #fff;
+  -ms-box-shadow: inset 0 0 1px #fff;
+  -o-box-shadow: inset 0 0 1px #fff;
+  -webkit-box-shadow: inset 0 0 1px #fff;
+  box-shadow: inset 0 0 1px #fff;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transtion: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.btn:hover{
+  background-position: 0 0;
+  border-color: #bbb;
+  -webkit-transition: 0.15s border-color linear;
+  -moz-transition: 0.15s border-color linear; 
+  background-position: 0 0px;
+  border:1px solid #999;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -ms-box-shadow: 0 0 3px #ccc;
+  -o-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px #ccc;
+  box-shadow: 0 0 3px #ccc;
+}
+.button{
+  font-weight: bold;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-top: 1px solid #ddd;
+  color: #333;
+  text-shadow: 0 1px 0px #fff;
+  border-bottom: 1px solid #aaa;
+  padding: 0.5em 0.8em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  background-image: -moz-linear-gradient(#fefefe, #eeeeee);
+  background-image: -o-linear-gradient(#fefefe, #eeeeee);
+  background-image: -ms-linear-gradient(#fefefe, #eeeeee);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #eeeeee));
+  background-image: -webkit-linear-gradient(#fefefe, #eeeeee);
+  box-shadow: 0 1px 1px #cccccc, inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  -webkit-transition: 0.15s border-color linear;
+  -moz-transition: 0.15s border-color linear; 
+}
+
+/*Green button*/
+.btn-green {
+  background: #65c31f;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  border-color: #57af17;
+  font-weight: bold;
+  background-color: #65c31f;
+  background-image: -moz-linear-gradient(#94d52d, #65c31f);
+  background-image: -o-linear-gradient(#94d52d, #65c31f);
+  background-image: -ms-linear-gradient(#94d52d, #65c31f);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #94d52d), color-stop(1, #65c31f));
+  background-image: -webkit-linear-gradient(#94d52d, #65c31f); 
+}
+.btn-green:hover {
+  background-position: 0 0;
+  border-color: #56ad14; 
+}
+.btn-green:active {
+  background: #65c31f;
+}
+
+/*
+  button blue-l
+*/
+.btn-blue-l{
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  color : white;
+  font-weight: bold;
+  border-color : #179DAF;
+  background: #2DCED5;
+  background-image: -moz-linear-gradient(#2DCED5, #1FC3AF);
+  background-image: -o-linear-gradient(#2DCED5, #1FC3AF);
+  background-image: -ms-linear-gradient(#2DCED5, #1FC3AF);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2DCED5), color-stop(1, #1FC3AF));
+  background-image: -webkit-linear-gradient(#2DCED5, #1FC3AF);
+}
+.btn-blue-l:active{
+  background-image: -webkit-linear-gradient(#5CDCE2, #4BD5C4);
+  background-image: -moz-linear-gradient(#5CDCE2,  #4BD5C4);
+  background: #5CDCE2;
+  background-image: -o-linear-gradient(#5CDCE2,  #4BD5C4);
+  background-image: -ms-linear-gradient(#5CDCE2,  #4BD5C4);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5CDCE2), color-stop(1,  #4BD5C4));
+}
+
+/*White button*/
+.btn-white{
+	background-color: #EFEFEF;
+	background-image: -moz-linear-gradient(white, #EFEFEF);
+	background-image: -o-linear-gradient(white, #EFEFEF);
+	background-image: -ms-linear-gradient(white, #EFEFEF);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, #EFEFEF));
+	background-image: -webkit-linear-gradient(white, #EFEFEF);
+	box-shadow: 0 1px 1px #EEE;
+}
+.btn-white:active{
+  background: #FAFAFA;
+}
+
+/*Red button*/
+.btn-red {
+  background: #dc5333;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  border-color: #c92c14;
+  font-weight: bold;
+  background-color: #d73d2c;
+  background-image: -moz-linear-gradient(#e65841, #d73d2c);
+  background-image: -o-linear-gradient(#e65841, #d73d2c);
+  background-image: -ms-linear-gradient(#e65841, #d73d2c);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e65841), color-stop(1, #d73d2c));
+  background-image: -webkit-linear-gradient(#e65841, #d73d2c); 
+}
+.btn-red:hover{
+	border-color : rgb(248, 79, 25);
+	background-position: 0 0;
+}
+.btn-red:active{
+  background : #e65841;
+}
+
+/*
+  blue buttons
+*/
+.btn-blue{
+  background-image : -webkit-linear-gradient(#34A5CF, #2A8AC4);
+  background: #34A5CF;
+  border: 1px solid #2B8BC7;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  color : white;
+  background-image : -moz-linear-gradient(#34A5CF, #2A8AC4);
+  background-image : -o-linear-gradient(#34A5CF, #2A8AC4);
+  background-image : -ms-linear-gradient(#34A5CF, #2A8AC4);
+  background-image : linear-gradient(#34A5CF, #2A8AC4);
+}
+.btn-blue:hover{
+  border-color : #099FD6;
+}
+.btn-blue:active{
+  background: #39AFDB;
+}
+
+/*
+  orange buttonts
+*/
+.btn-orange{
+  border: 1px solid #F4AB4C;
+  background: -webkit-linear-gradient(#FBD568, #FFB347);
+  background: -moz-linear-gradient(#FBD568, #FFB347);
+  background: -o-linear-gradient(#FBD568, #FFB347);
+  background: #FBD568;
+  color : white;
+  text-shadow : 0 1px 2px rgba(0, 0, 0, 0.35);
+  filter : progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#FBD568", endColorstr="#FFB347");
+}
+.btn-orange:hover{
+  background: -webkit-linear-gradient(#FBD568, #FFB347);
+  background: -moz-linear-gradient(#FBD568, #FFB347);
+  background: -o-linear-gradient(#FBD568, #FFB347);
+  background: #FFB347;
+}
+/*
+  END OF BUTTONS
+*/
+
+/*
+  INPUT TYPE=TEXT
+*/
+input[type="text"], input[type="password"], input[type="email"], input[type="number"]{
+  text-indent: 10px;
+  cursor : text;
+  width : 100%;
+  padding : 4px;
+  color: #525760;
+  border: 1px solid #D9D9D9;
+  line-height: 26px;
+  font-size : 1.0em;
+  display: block;
+  height : 36px;
+}
+select{
+  width : 100%;
+  padding : 4px;
+  color: #525760;
+  border: 1px solid #D9D9D9;
+  line-height: 26px;
+  font-size : 1.0em;
+  display: block;
+  height : 36px;
+}
+/*
+  END OF TYPE=TEXT
+*/
+
+/*
+  input type=radio
+*/
+input[type='radio']{
+  background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  background-image: -moz-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  background-image: linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12),
+      inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  color: black;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #444;
+  font: inherit;
+  margin: 0 1px 0 0;
+  text-shadow: 0 1px 0 rgb(240, 240, 240);
+  border-radius: 100%;
+  bottom: 3px;
+  height: 15px;
+  position: relative;
+  vertical-align: middle;
+  width: 15px;
+}
+input[type="radio"]:checked::before {
+  background-color: #666;
+  border-radius: 100%;
+  bottom: 3px;
+  content: '';
+  display: block;
+  left: 3px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+input[type="radio"]:active{
+  background: #DDDDD7;
+}
+/*
+  end of radio
+*/
+/*
+  SELECT
+*/
+select{
+  width : 100%;
+  padding : 8px 4px;
+  position: relative;
+  vertical-align: middle;
+  height: auto;
+  font-size : 16px;
+}
+select option{
+  background: white;
+  color : gray;
+}
+/*
+  textarea
+*/
+textarea{
+  width : 100%;
+  min-height : 200px;
+  border : 1px solid #ddd;
+  padding: 10px;
+}
+
+
+.btn-line-height{
+  line-height: 30px;
+}

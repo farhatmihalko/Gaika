@@ -1,0 +1,36 @@
+/*
+	header css styles!
+*/
+.header{
+	position: relative;
+	background: white;
+	border-bottom : 1px solid #ddd;
+	margin-bottom : 25px;
+	height : 45px;
+	display: block;
+	color : #333;
+}
+.header  a{
+	line-height: 28px;
+	color : #685C5F;
+	font-size : 12px;
+	padding : 8px 10px;
+}
+.header a:hover{
+	color: #385279;
+	background: whiteSmoke;
+}
+
+/* header choose city*/
+.header-city{
+	width : 500px;
+}
+.header-city li{
+	display: inline-block;
+	width : 150px;
+	border-radius: 3px;
+}
+.header-city li::before{
+	position: absolute;
+	width : 100px;
+}

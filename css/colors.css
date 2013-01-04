@@ -1,0 +1,38 @@
+/*background colors*/
+.color-b-252{
+	background : rgb(237, 237, 252);
+}
+.color-b-254{
+	background : #FAFAFF;
+}
+.color-y-250{
+	background: #FAFAC4;
+}
+.color-r-250{
+	background : #FDF5F4;
+}
+.color-g-250{
+	background: #F1FDEF;
+}
+.color-o-250{
+	background: #FCF7ED;
+}
+.color-g-250{
+	background : #F7F7F7;
+}
+.color-g-254{
+	background :#ECFDD5;
+}
+.color-g-255{
+	background: #F8FFEF;
+}
+
+/*border colors*/
+.border-color-g253{
+	border : 1px dashed #CDE4C0;
+}
+
+/*fonts*/
+.font-color-l-blue{
+	color : rgb(0, 127, 177);
+}

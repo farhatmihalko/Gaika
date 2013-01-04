@@ -1,0 +1,41 @@
+.width-80{
+	width : 80%;
+}
+.width-50{
+	width : 50%;
+}
+.width-40{
+	width : 40%;
+}
+.width-30{
+	width : 30%;
+}
+.c_main:hover{
+	background : rgba(250,250,250,1.0);
+}
+
+
+.list-name > strong{
+	font-weight: bold;
+}
+label.list-name{
+	margin-bottom : 7px;
+	display: inline-block;
+	color: #333;
+	line-height: 22px;
+	font-size : 13px;
+}
+
+.submenu-a{
+	background : white;
+	font-size : 14px;
+	padding : 4px 8px;
+	border : 1px solid #D3D3D3;
+	color: #3C78A0;
+	cursor: pointer;
+	line-height: 18px;	
+	display: inline;
+}
+.submenu-a:hover{
+	background: rgb(252, 252, 252);
+}

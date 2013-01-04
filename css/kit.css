@@ -1,0 +1,126 @@
+.white{
+	background: white;
+}
+.bold{
+	font-weight: bold;
+}
+.pointer{
+	cursor: pointer;
+}
+.row{
+	background: white;
+	border-radius: 3px;
+}
+.align-center{
+	text-align: center;
+}
+.hr-dashed{
+	border-bottom : 1px dashed #ddd;
+}
+.inline{
+	display: inline-block;
+}
+.block{
+	display : block;
+}
+.hide{
+	display : none;
+}
+.float-none{
+	float :none;
+}
+.clearfix{
+	clear : both;
+}
+.pad{
+	padding : 6px;
+}
+.pad-big{
+	padding: 12px;
+}
+.pad-top{
+	padding-top : 20px;
+}
+.pad-bottom{
+	padding-bottom : 20px;
+}
+.pad-tb{
+	padding-top : 20px;
+	padding-bottom: 20px;
+}
+.right{
+	float : right;
+}
+.left{
+	float : left;
+}
+.field{
+	padding:10px 20px;
+}
+.line-after-big{
+	margin-bottom : 20px;
+}
+.line-before-big{
+	margin-top : 20px;
+}
+.line-after{
+	margin-bottom : 10px;
+}
+.line-before{
+	margin-top : 10px;
+}
+.shadow{
+	box-shadow: 3px 4px 11px rgba(12, 12, 12, .04);
+	border: 1px solid #D9D9D9;
+}
+.pad-right{
+	padding-right : 5px;
+}
+.pad-right-big{
+	padding-right: 20px;
+}
+.pad-left-big{
+	padding-left : 20px;
+}
+.pad-left{
+	padding-left: 5px;
+}
+.margin-left{
+	margin-left : 10px;
+}
+.margin-right{
+	margin-right: 10px;
+}
+.easy{
+	font-weight: normal;
+}
+.center{
+	display: block;
+	margin: 0 auto;
+}
+.font-gray-bold{
+	color : gray;
+	font-weight: bold;
+}
+.no-bg-color{
+	background : initial;
+	background : none;
+}
+.border-b-252{
+	border: 2px dashed #CDCDFF;
+}
+
+.line-height-2{
+	line-height: 2;
+}
+
+.height-full{
+	height : 100px;
+}
+
+.font-size-18{
+	font-size : 18px;
+}
+.font-size-15{
+	font-size : 15px;
+}
