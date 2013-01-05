@@ -14,6 +14,12 @@
 .align-center{
 	text-align: center;
 }
+.align-initial{
+	text-align: initial;
+}
+.vertical-align-m{
+	vertical-align: middle;
+}
 .hr-dashed{
 	border-bottom : 1px dashed #ddd;
 }
@@ -126,4 +132,10 @@
 }
 .font-size-13{
 	font-size : 13px;
+}
+
+
+
+.user-queries-page{
+	min-height : 300px;
 }

@@ -91,7 +91,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row hide">
 	<button class="btn btn-green button" id="js-module-modal" data-target="js-modal-user-settings">
 		Нажать чтобы
 	</button>

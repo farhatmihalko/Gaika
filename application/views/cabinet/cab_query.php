@@ -1,109 +1,73 @@
-<div class='row' id='js_block-query12311'>
-		<div class="block">
-			<div class="block_head">
-					<div class="bheadl"></div>
-					<div class="bheadr"></div>
-					<h2 style='margin-top:0px;'>Ваши заявки</h2>
-					<ul>
-						<!--
-						<li class="nobg"><a href="#"><i class="icon-wrench"></i>Посмотреть запросы</a></li>
-						<li><a href="#"><i class="icon-share-alt"></i>Добавить новый запрос</a></li>
-						-->
-					</ul>
-			</div>		<!-- .block_head ends -->
-			
-			<div class="block_content">
-				<table cellpadding="0" cellspacing="0" width="100%" class="sortable">
-							<thead>
-								<tr>
-									<th class="thheader" style="cursor: pointer; ">#</th>
-									<th class='thheader' style="cursor: pointer; ">VIN-КОД</th>
-									<th class="thheader" style="cursor: pointer; ">Название</th>
-									<th class="thheader" style="cursor: pointer; ">Дата подачи</th>
-									<th class="thheader" style="cursor: pointer; ">Отзывы</th>
-									<th>Действия</th>
-								</tr>
-							</thead>
-							<tbody>
+<div class="page">
+	<!--content here-->
+	<div class="row shadow pad-bottom">
 
-								<?php
-								 $counter = 1;
-								 foreach($info as $key=>$value){ ?>
-								<tr class="even">
-									<td><a href="#"><?php echo $counter++; ?></a></td>
-									<td><a href='#'><?php echo $key;?></a></td>
-									<td><a href='#'><?php echo $value['car'].', '.$value['year'].' год';?></a></td>
-									<td><a href="#"><?php 
-											foreach ($value['parts'] as $row) {
-												echo $row.' ';
-											}
-										?></a></td>
-									<td><a href="#"><?php echo count($value['sellers']);?></a></td>
-									<td class="delete"><a href="#" data-id="<?php echo $key;?>" >Удалить</a></td>
-								</tr>
-								<tr class='t_query-main'>
-									<td colspan='7' style='background:white;'>
-										<div class='t_query-content'>
-											<div class='t_q-c-header'>
-												<div class='name' style='width : 25%;'>
-													Название компании
-												</div>
-												<div class='comment' style='width : 35%;'>
-													Общая цена на запчасти
-												</div>
-												<div class='actions' style='width : 35%;'>
-													Действия
-													<?php echo $this->session->userdata('delete_approve');?>
-												</div>
+		<div class="twelve columns field">
+			<button class="btn button btn-orange " id="js-module-modal" data-target="">
+				<i class="icon-edit pad-right"></i>Подать заявку
+			</button>
+			<div class="right">
+				<button class="submenu-a" id="js-module-modal" data-target="">
+					<i class="icon-star pad-right"></i>Как подавать заявку
+				</button>
+			</div>
+		</div>
+		
+		<hr class="hr-dashed">
 
-											</div>
-											<div class='clearfix'></div>
-											<?php 
-											if (count($value['sellers'])==0){ ?>
-											<div class='t_q-c-line t_q-c-l-first' style="line-height:80px;">
+		<div data-description="content-in" class="line-before-big user-queries-page">
+			<?php
+				for($i = 0; $i < 4; $i++)
+				foreach($info as $key=>$value){
+			?>
+				<div class="six columns adv-line hr-dashed pointer color-b-254">
+					<div class="seven columns">
+						<a class="line-after block">
+							<?php
+								echo $value["car"].", ".$value["year"]." год";
+							?>
+						</a>
+						<span class="breadcum">
+							Vin-Code : 
+							<?php 
+								echo $key;
+							?>
 
-												<div class='t_q-c-l-i' style='width : 25%;'>
-													Пусто
-												</div>
-												<div class='t_q-c-l-s' style='width : 35%;'>
-													 Пусто
-												</div>
-												<div class='t_q-c-l-a' style='width : 35%;'>
-													Пусто
-												</div>
-											</div>	
-											<?php }
-											foreach($value['sellers'] as $row) {?>
-											<div class='t_q-c-line t_q-c-l-first'>
-												<div class='t_q-c-l-i' style='width : 25%;'>
-													<img style="width:40px;height:60px;" src="<?php echo base_url();?>imgs/<?php echo $row->img;?>">
-													<br>
-													<?php echo $row->seller_name;?>
-												</div>
-												<div class='t_q-c-l-s' style='width : 35%;'>
-													<p class='t_q-c-s-tenge'><?php echo $row->parts_val.' запчастей за '.$row->overall;?> <span>тенге</span></p>
-												</div>
-												<div class='t_q-c-l-a' style='width : 35%;'>
-													<div class='buttons'>
-														<a href='<?php echo base_url();?>index.php/main/view_seller_answers/<?php echo $key."/".$row->seller_id;?>' onclick='var href = this.getAttribute("href"); document.location.replace(href);'class='btn'><i class='icon-hand-right'></i> Подробнее</a>
-													</div>
-												</div>
-											</div>
-											<?php }
-										}?>
-									</tr>
-							</tbody>
-				</table>
-											
-						
-						
-						
-						
-						
-											
-			</div>		
+						</span>
+					</div>
+					<div class="two columns align-center font-size-14">
+						<a>
+							<?php 
+								echo $this->session->userdata('id');
+								echo count($value['sellers']);
+							?>
+						</a>
+					</div>
+					<div class="three columns adv-add-btn">
+						<button class="btn btn-red button center" id="js-action-button" data-id="<?php echo $key;?>" 
+							data-url="<?php echo base_url('index.php/main/accept_answer');?>">
+							<i class="icon-trash"></i>
+						</button>
+					</div>
+				</div>
+			<?php
+				}
+			?>
+		</div>
+		<div class="twelve columns line-before-big">
+			<div class="seven columns">
 				
-				<div class="bendl"></div>
-				<div class="bendr"></div>
+			</div>
+			<div class="five columns">
+				<div class="right">
+					<span class="breadcum inline">
+						В случае нажатия 
+						<img src="<?php echo base_url('images/user/help-remove-button.PNG');?>" alt="" class="vertical-align-m">
+						вы удалите ваш запрос
+					</span>
+				</div>
+			</div>
 		</div>
 	</div>
+	<!--end content here-->
+</div>

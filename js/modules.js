@@ -243,6 +243,44 @@ modules["buttons-link-module"] = (function(){
 		worker : worker
 	}
 });
+
+modules["buttons-action-module"] = (function(){
+	var data = {
+		active : function(){
+			return $("#js-action-button");
+		}
+	}
+	var init = function(){
+		data.active().each(function(){
+			$(this).live("click", function(){
+				worker($(this), function(){
+					alert("Good");
+				});
+			});
+		});
+	}
+	var worker = function(object, s){
+		s = s || function(){
+			throw "Callback must be initialized";
+		}
+		var dataId = object.attr("data-id") || "0";
+		var dataUrl = "1";//object.attr("data-url") || "empty";
+		$.ajax({
+			type : "POST",
+			url : dataUrl,
+			data : {
+				id : dataId
+			},
+			success : s
+		});
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+	//extend
+
+});
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!
