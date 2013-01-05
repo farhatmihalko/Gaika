@@ -745,19 +745,6 @@ class Main extends CI_Controller {
 		}
 	}
 
-	public function show_add_query_form(){
-		if ($this->session->userdata('image-path')){
-			if (file_exists('./imgs/'.$this->session->userdata('image-path')))
-				unlink('./imgs/'.$this->session->userdata('image-path'));
-			$this->session->unset_userdata('image-path');
-		}
-		$data['companies'] = $this->main_model->get_companies();
-		$data['parts'] = $this->main_model->get_parts();
-		$data['categories'] = $this->main_model->get_categories();
-		$data['cities'] = $this->main_model->get_cities();
-		$this->load->view('add_query_view2',$data);
-	}
-
 	public function get_models(){
 		$company = $this->input->post('company');
 		$data = $this->main_model->get_models($company);
@@ -867,23 +854,6 @@ class Main extends CI_Controller {
 			$this->load->view('seller/my_answers',$result);
 			$this->load->view('footer');
 		}
-	}
-
-	public function verify_captcha(){
-	  require_once(APPPATH.'recaptchalib.php');
-	  $privatekey = "6Ld2MtYSAAAAAFErIRJNCWuG-T36TenumAqevsP8";
-	  $resp = recaptcha_check_answer ($privatekey,
-	                                $_SERVER["REMOTE_ADDR"],
-	                                $_POST["recaptcha_challenge_field"],
-	                                $_POST["recaptcha_response_field"]);
-
-	  if (!$resp->is_valid) {
-	    // What happens when the CAPTCHA was entered incorrectly
-	    echo ("reCAPTCHA была введена неправильно. Пожалуйста, попробуйте еще раз." .
-	         "(reCAPTCHA said: " . $resp->error . ")");
-	  } else {
-	    	echo ("1");
-	  }
 	}
 
 	public function about(){
