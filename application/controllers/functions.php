@@ -88,13 +88,4 @@ class Functions extends CI_Controller {
 				mail($obj->mail,'Новые ответы',$message);
 		}
 	}
-
-	/*public function add_new_answer(){
-		$seller_id = $this->session->userdata('id');
-		$query_id = $this->input->post('query_id');
-		$price = $this->input->post('price');
-		$comment = $this->input->post('comment');
-		$this->main_model->add_new_answer($seller_id,$query_id,$price,$comment)_id
-	}*/
-	
 }
