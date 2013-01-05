@@ -307,6 +307,10 @@ modules["user-add-new-module"] = (function(){
 		var newPP = template.html().replace(new RegExp("{-NUMBER-}","g"), T_NUMBER);
 		T_NUMBER += 1;
 		contentPlace.append(newPP);
+		//scroll need
+		var scrollPr = $("#js-user-remove-part").offset().top;
+		console.log(scrollPr)
+		$(window).scrollTop(scrollPr);
 	}
 	return {
 		initialize : init,

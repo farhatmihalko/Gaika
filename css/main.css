@@ -292,8 +292,8 @@ ul{
 }
 /*modal window*/
 #js-scroll{
-	height : 450px;
-	overflow: auto;
+	max-height : 450px;
+	overflow-y: scroll;
 }
 .modal-window{
 	border-radius: 5px;

@@ -2,7 +2,7 @@
 	<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-user-query">
 		<div class="close-button"></div>
 		<div>
-			<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST">
+			<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST" id="js-scroll">
 				<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Подача запроса</h4>
 				<hr class="hr-dashed">
 				<div class="twelve columns pad-bottom line-before">
@@ -73,7 +73,7 @@
 							<a class="pointer bold font-size-12 margin-right" id="js-user-add-part">
 								Добавить еще запчасть
 							</a>
-							<a class="pointer bold font-size-12 hide" id="js-user-remove-part">
+							<a class="pointer bold font-size-12 hide font-color-r" id="js-user-remove-part">
 								Удалить добавленную запчасть
 							</a>
 						</div>
