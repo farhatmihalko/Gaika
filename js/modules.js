@@ -281,6 +281,38 @@ modules["buttons-action-module"] = (function(){
 	//extend
 
 });
+
+
+modules["user-add-new-module"] = (function(){
+	var T_NUMBER = 2;
+	var init = function(){
+		$("#js-user-add-part").live("click", function(){
+			worker();
+			$("#js-user-remove-part").show();
+		});
+		$("#js-user-remove-part").live("click", function(){
+			if(T_NUMBER === 2)
+				throw "THIS IS NOT GOOD!";
+			T_NUMBER--;
+			var st = "js-user-query-n[" + T_NUMBER + "]";
+			var node = document.getElementById(st);
+			$(node).remove();
+			if(T_NUMBER === 2)
+				$(this).hide();
+		})
+	}
+	var worker = function(){
+		var template = $("#js-user-query-template");
+		var contentPlace = $("#js-user-query-content");
+		var newPP = template.html().replace(new RegExp("{-NUMBER-}","g"), T_NUMBER);
+		T_NUMBER += 1;
+		contentPlace.append(newPP);
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+})
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!

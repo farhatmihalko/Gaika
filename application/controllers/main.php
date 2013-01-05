@@ -478,7 +478,12 @@ class Main extends CI_Controller {
 		$style['basePathJs']=basePathJs;
 		$this->load->view('header',$style);
 		//need to refactoring
-		$this->load->view('cabinet/cab_menu');
+		$query['companies'] = $this->main_model->get_companies();
+		$query['parts'] = $this->main_model->get_parts();
+		$query['categories'] = $this->main_model->get_categories();
+		$query['cities'] = $this->main_model->get_cities();
+
+		$this->load->view('cabinet/cab_menu' , $query);
 		$this->load->view('cabinet/cab_query', $data);
 		$this->load->view('cabinet/cab_setting', $person);
 		//end of refactoring
@@ -653,6 +658,7 @@ class Main extends CI_Controller {
 			} else
 				if (!is_null($part_names[$i])&&!is_null($part_types1[$i])&&!is_null($part_types2[$i])&&!is_null($part_types3[$i])&&!is_null($part_places1[$i])&&!is_null($part_places2[$i])&&!is_null($part_places3[$i])&&!is_null($part_cats[$i]))
 					$bo = $this->main_model->add_new_query($car_id,$part_names[$i],$car_year,$car_vincode,$part_types1[$i],$part_types2[$i],$part_types3[$i],$city,$part_places1[$i],$part_places2[$i],$part_places3[$i],$part_cats[$i]);
+				echo $bo;
 			if ($bo == false){
 				$ans=1;
 			}

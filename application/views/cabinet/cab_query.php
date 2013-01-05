@@ -3,7 +3,7 @@
 	<div class="row shadow pad-bottom">
 
 		<div class="twelve columns field">
-			<button class="btn button btn-orange " id="js-module-modal" data-target="">
+			<button class="btn button btn-orange " id="js-module-modal" data-target="js-modal-user-query">
 				<i class="icon-edit pad-right"></i>Подать заявку
 			</button>
 			<div class="right">
@@ -17,7 +17,6 @@
 
 		<div data-description="content-in" class="line-before-big user-queries-page">
 			<?php
-				for($i = 0; $i < 4; $i++)
 				foreach($info as $key=>$value){
 			?>
 				<div class="six columns adv-line hr-dashed pointer color-b-254">
