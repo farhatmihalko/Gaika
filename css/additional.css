@@ -33,7 +33,7 @@ label.list-name{
 	border : 1px solid #D3D3D3;
 	color: #3C78A0;
 	cursor: pointer;
-	line-height: 18px;	
+	height : 31px;
 	display: inline;
 }
 .submenu-a:hover{
