@@ -291,6 +291,10 @@ ul{
 	text-decoration: none;
 }
 /*modal window*/
+#js-scroll{
+	height : 450px;
+	overflow: auto;
+}
 .modal-window{
 	border-radius: 5px;
 	position: absolute;

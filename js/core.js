@@ -79,5 +79,4 @@ $(document).ready(function(){
 });
 
 function uiGarbase(){
-
 }

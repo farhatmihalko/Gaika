@@ -1,3 +1,4 @@
+
 !function($) {
 	var openClass = "open";
 	var dropDown = (function(){
@@ -18,5 +19,3 @@
 	$.fn.DropDown = dropDown;
 	//--End--//
 }(window.jQuery);
-
-
