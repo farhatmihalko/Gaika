@@ -117,7 +117,7 @@ class Main_model extends CI_Model {
 	function get_adverts(){
 		$this->db->limit(30);
 		$this->db->order_by('date');
-		$this->db->where('category',$this->input->post('category'));
+		$this->db->where('category',$_POST['category']);
 		$data = $this->db->get('adverts');
 		return $data->result();
 	}
@@ -150,25 +150,13 @@ class Main_model extends CI_Model {
 		}
 	} // file work
 
-	function add_new_query($car_id,$part,$year,$vin,$type1,$type2,$type3,$city,$place1,$place2,$place3,$category){
-		if ($place1=="")
-			$place1 = 4;
-		if ($place2=="")
-			$place2 = 4;
-		if ($place3=="")
-			$place3 = 4;
+	function add_new_query($car_id,$part,$year,$vin,$city,$category){
 		$data = array( 	'car_id' =>$car_id,
 						'user_id' =>$this->session->userdata('id'),
 						'part' =>$part,
 						'year' =>$year,
 						'vin' =>$vin,
-						'type1' =>$type1,
-						'type2' =>$type2,
-						'type3' =>$type3,
 						'city' =>$city,
-						'place1' =>$place1,
-						'place2' =>$place2,
-						'place3' =>$place3,
 						'category' =>$category,
 						'query_date' => date("Y:m:d:H:i"));
 		return $this->db->insert('user_queries',$data);

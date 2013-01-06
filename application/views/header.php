@@ -55,10 +55,10 @@
 										<a href="<?php echo base_url();?>index.php/main/find_queries"><i class="icon-cloud pad-right"></i>Мой кабинет</a>
 										<!--end of seller-->
 									<?php }
-								} 
+								}	 
 								else { 
 									echo $this->session->userdata("type");
-									?>
+									if ($this->session->userdata('type')=='user'){?>
 								  <!--это простой юзер-->
 									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
 									<div class="inline">
@@ -95,8 +95,44 @@
 											</li>
 										</ul>
 									</div>
+								<?php } elseif($this->session->userdata('type')=='seller'){?>
 									<!--end of user-->
-								<?php }
+									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
+									<div class="inline">
+										<a class="dropdown-open pointer"><i class="icon-user pad-right"></i>Мой кабинет</a>
+										<ul class="dropdown-menu dropdown-profile">
+											<li class="dropdown-caret profile">
+				               	 <span class="caret-outer"></span>
+				               	 <span class="caret-inner"></span>
+				            	</li>
+				            	<li>
+				            		<a href="<?php echo base_url('index.php/main/find_queries');?>" class="bold">
+				            			Поиск запчастей
+				            		</a>
+				            	</li>
+				            	<li class="dropdown-divider"></li>
+											<li>
+												<a href="<?php echo base_url();?>"><i class="icon-money pad-right"></i>Мой кошелек</a>
+											</li>
+											<li>
+												<a href="<?php echo base_url('index.php/main/view_seller_settings')?>">
+													<i class="icon-certificate pad-right"></i>Настройки профиля
+												</a>
+											</li>
+											<li class="dropdown-divider"></li>
+											<li>
+												<a id="js-module-modal" data-target="js-modal-seller-help" class="pointer"><i class="icon-group pad-right"></i>Как пользоваьтся?</a>
+											</li>
+											<li>
+												<a href="<?php echo base_url('index.php/main/contact_form');?>"><i class="icon-pencil pad-right"></i>Написать нам</a>
+											</li>
+											<li class="dropdown-divider"></li>
+											<li>
+												<a href="<?php echo base_url('index.php/main/logout');?>"><i class="icon-signout pad-right"></i>Выход из кабинета</a>
+											</li>
+										</ul>
+									</div>
+								<?php }}
 							} else {?>
 									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
 									<a href="<?php echo base_url();?>index.php/main/login"><i class="icon-signin pad-right"></i>Войти в кабинет</a>
