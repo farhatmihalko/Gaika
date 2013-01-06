@@ -51,11 +51,11 @@
 									<strong>Наименование </strong> 
 										(Например: Колодка)
 									</label>
-									<input type="text" id="query-part-type[1]" name="part-name[0]">
+									<input type="text" name="part_name[1]" id="query-part-type[1]">
 								</div>
 							
 								<div class="line-before">
-									<label for="query-part-cat[0]" class="list-name">
+									<label for="query-part-cat[1]" class="list-name">
 										<strong>Категория</strong>
 									</label>
 									<select name='part_cat[1]' id="query-part-cat[0]">
@@ -103,7 +103,7 @@
 				<label for="query-part-type[{-NUMBER-}]" class="list-name">
 				<strong>Наименование </strong>
 				</label>
-				<input type="text" id="query-part-type[{-NUMBER-}]" name="part-name[{-NUMBER-}]">
+				<input type="text" name="part_name[{-NUMBER-}]" id="query-part-type[{-NUMBER-}]" >
 			</div>
 		
 			<div class="line-before">

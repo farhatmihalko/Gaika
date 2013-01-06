@@ -588,7 +588,7 @@ class Main extends CI_Controller {
 		$car_year = $_POST['car-year'];
 		$city = $this->session->userdata('city');
 		$car_vincode = $_POST['car-vincode'];
-		$part_names = $_POST['part-name'];
+		$part_names = $_POST['part_name'];
 		$part_cats = $_POST['part_cat'];
 		$num = count($part_names);
 		if (!isset($part_types1))
