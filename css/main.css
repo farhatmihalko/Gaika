@@ -291,9 +291,13 @@ ul{
 	text-decoration: none;
 }
 /*modal window*/
-#js-scroll{
+.js-scroll{
 	max-height : 450px;
 	overflow-y: scroll;
+}
+.js-scroll-big{
+	max-height : 550px;
+	overflow-y : scroll;
 }
 .modal-window{
 	border-radius: 5px;

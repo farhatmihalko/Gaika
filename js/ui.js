@@ -1,4 +1,3 @@
-
 !function($) {
 	var openClass = "open";
 	var dropDown = (function(){

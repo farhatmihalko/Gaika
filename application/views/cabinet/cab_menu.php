@@ -1,8 +1,8 @@
 <div class="row">
-	<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-user-query">
+	<div class="modal-window shadow six columns centered offset-by-three hide js-scroll" id="js-modal-user-query">
 		<div class="close-button"></div>
 		<div>
-			<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST" id="js-scroll">
+			<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST">
 				<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Подача запроса</h4>
 				<hr class="hr-dashed">
 				<div class="twelve columns pad-bottom line-before">

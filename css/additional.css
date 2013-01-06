@@ -35,6 +35,7 @@ label.list-name{
 	cursor: pointer;
 	height : 31px;
 	display: inline;
+	box-shadow: none;
 }
 .submenu-a:hover{
 	background: rgb(252, 252, 252);

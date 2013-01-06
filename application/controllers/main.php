@@ -603,7 +603,7 @@ class Main extends CI_Controller {
 			if (is_null($car_id)){
 				$ans = 1;
 			} else
-				if (!is_null($part_names[$i])&&!is_null($part_cats[$i]))
+				if (!is_null($part_names[$i]) && !is_null($part_cats[$i]))
 					$bo = $this->main_model->add_new_query($car_id,$part_names[$i],$car_year,$car_vincode,$city,$part_cats[$i]);
 				echo $bo;
 			if ($bo == false){
