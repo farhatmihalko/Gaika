@@ -69,38 +69,36 @@
 	</div>
 	<div class="row">
 		<!--form to help-->
-		<form action="" method="POST">
-			<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-seller-help-find">
-				<div class="close-button"></div>
-				<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Как искать запчасти?</h4>
-				<hr class="hr-dashed">
-				<div class="twelve columns line-after line-before pad-bottom">
-					<div class="group-line pad">
-						<p>
-							Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Искать запчасти</a>
-						</p>
-						<img src="<?php echo base_url('images/seller/how-use-1.png');?>" alt="">
-					</div>
-					<div class="group-line pad">
-						<p>
-							После нажатия этой кнопки перед вами появится 
-							<a class="breadcum inline bold">окно</a>
-							с возможностью выбора параметров
-						</p>
-						<img src="<?php echo base_url('images/seller/how-use-2.png');?>" alt="">
-					</div>
-					<div class="group-line pad">
-						<p>
-							В случае подтверждения запроса вы получите 
-							<a class="breadcum inline bold">результаты</a>
-							в удобном виде
-						</p>
-						<img src="<?php echo base_url('images/seller/how-use-3.png');?>" alt="">
-					</div>
+		<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-seller-help-find">
+			<div class="close-button"></div>
+			<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Как искать запчасти?</h4>
+			<hr class="hr-dashed">
+			<div class="twelve columns line-after line-before pad-bottom">
+				<div class="group-line pad">
+					<p>
+						Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Искать запчасти</a>
+					</p>
+					<img src="<?php echo base_url('images/seller/how-use-1.png');?>" alt="">
 				</div>
-				<hr class="hr-dashed">
+				<div class="group-line pad">
+					<p>
+						После нажатия этой кнопки перед вами появится 
+						<a class="breadcum inline bold">окно</a>
+						с возможностью выбора параметров
+					</p>
+					<img src="<?php echo base_url('images/seller/how-use-2.png');?>" alt="">
+				</div>
+				<div class="group-line pad">
+					<p>
+						В случае подтверждения запроса вы получите 
+						<a class="breadcum inline bold">результаты</a>
+						в удобном виде
+					</p>
+					<img src="<?php echo base_url('images/seller/how-use-3.png');?>" alt="">
+				</div>
 			</div>
-		</form>
+			<hr class="hr-dashed">
+		</div>
 		<!--end of form-->
 	</div>
 	<!--end of modals-->	

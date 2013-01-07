@@ -350,3 +350,30 @@ ul{
 }
 
 /*end of seller*/
+
+
+/*
+	ABOUT_SITE
+*/
+.about_list{
+
+}
+.about_list > li{
+	display: inline-block;
+	margin-right : 14px;
+	cursor: pointer;
+}
+.about_list > li > a{
+	cursor: pointer;
+	color: #555E6C;
+	font-size: 15px;
+}
+.about_list > .active{
+	border : 2px solid #F6B079;
+	font-weight: bold;
+	padding : 6px 10px;
+	border-radius: 14px;
+}
+/*
+	END OF ABOUT_SITE
+*/

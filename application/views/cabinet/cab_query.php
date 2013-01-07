@@ -7,7 +7,7 @@
 				<i class="icon-edit pad-right"></i>Подать заявку
 			</button>
 			<div class="right">
-				<button class="submenu-a" id="js-module-modal" data-target="">
+				<button class="submenu-a" id="js-module-modal" data-target="js-modal-user-help-query">
 					<i class="icon-star pad-right"></i>Как подавать заявку
 				</button>
 			</div>
