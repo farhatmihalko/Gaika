@@ -81,10 +81,14 @@ $(document).ready(function(){
 function uiGarbase(){
 
 	$("#js-user-table").bind("click", function(){
+		$(this).addClass("a_type_cat");
+		$("#js-user-list").removeClass("a_type_cat");
 		$("#js-user-type-list").hide();
 		$("#js-user-type-table").fadeIn("fast");
 	});
 	$("#js-user-list").bind("click", function(){
+		$(this).addClass("a_type_cat");
+		$("#js-user-table").removeClass("a_type_cat");
 		$("#js-user-type-table").hide();
 		$("#js-user-type-list").fadeIn("fast");
 	});

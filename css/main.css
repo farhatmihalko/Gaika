@@ -377,3 +377,10 @@ ul{
 /*
 	END OF ABOUT_SITE
 */
+
+.a_type{
+	padding : 6px 14px;
+}
+.a_type_cat{
+	background: #F9F9FF;
+}

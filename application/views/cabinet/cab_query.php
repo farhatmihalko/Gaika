@@ -6,11 +6,11 @@
 			<button class="btn button btn-orange " id="js-module-modal" data-target="js-modal-user-query">
 				<i class="icon-edit pad-right"></i>Подать заявку
 			</button>
-			<div class="right margin-top-5">
-					<a class="breadcum pointer inline pad-right-big" id="js-user-table">
+			<div class="right">
+					<a class="breadcum pointer inline a_type margin-right a_type_cat" id="js-user-table">
 						<i class="icon-th-large"></i> Таблицей
 					</a>
-					<a class="breadcum pointer inline" id="js-user-list">
+					<a class="breadcum pointer inline a_type" id="js-user-list">
 						<i class="icon-align-justify"></i> Списком
 					</a>
 			</div>
