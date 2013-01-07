@@ -66,7 +66,12 @@
 		</div>
 		<div class="twelve columns line-before-big">
 			<div class="seven columns">
-				
+				<a class="breadcum pointer inline margin-right-big">
+					<i class="icon-th-large"></i> Таблицей
+				</a>
+				<a class="breadcum pointer inline">
+					<i class="icon-align-justify"></i> Списком
+				</a>
 			</div>
 			<div class="five columns">
 				<div class="right">
