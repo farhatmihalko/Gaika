@@ -80,6 +80,7 @@ modules["modal-window-module"] = function(){
 			height : docHeight
 		});
 		data.overlay().bind("click", function(){
+			return false;
 			closeOverlay();
 			closeModal();
 		});

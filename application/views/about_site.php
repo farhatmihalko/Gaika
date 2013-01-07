@@ -77,11 +77,15 @@
 		</div>
 		
 		<div class="hide" id="js-tab-content-2">
-			Контент для часто задаваемых вопросов	
+			<div class="twelve columns">
+				
+			</div>	
 		</div>
 		
 		<div class="hide" id="js-tab-content-3">
-			Пользовательское соглашение
+			<div class="twelve columns">
+				
+			</div>
 		</div>
 			
 	<!--end of page content-->
