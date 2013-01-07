@@ -809,5 +809,19 @@ class Main extends CI_Controller {
 		$this->load->view('contact_form');
 		$this->load->view('footer');
 	}
+
+	public function add_news(){
+		$this->image_path();
+		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+
+		$this->form_validation->set_rules('title','Title','required');
+		$this->form_validation->set_rules('content','Content','required');
+
+		if ($this->form_validation->run()){
+			$this->main_model->add_news();
+		}
+
+		$this->load->view('add_news_view');
+	}
 }
 ?>

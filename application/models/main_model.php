@@ -409,4 +409,12 @@ class Main_model extends CI_Model {
 		$data = array('delete_approve'=>1);
 		$this->db->update('users',$data);
 	}
+
+	function add_news(){
+		$arr = array(
+					'title' => $_POST['title'],
+					'content' => $_POST['content'],
+					);
+		$this->db->insert('news',$arr);
+	}
 }
