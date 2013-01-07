@@ -228,7 +228,7 @@ class Main_model extends CI_Model {
 		return;
 	}
 
-	function get_queries($company,$model,$city,$year_from,$year_until,$type1,$type2,$type3,$category){
+	function get_queries($company,$model,$city,$year_from,$year_until,$category){
 		if (isset($company) && $company!=""){
 			$where = "car_id IN (SELECT id FROM cars WHERE company='".$company."')";
 			$this->db->where($where);
@@ -249,21 +249,6 @@ class Main_model extends CI_Model {
 
 		if (isset($year_until) && $year_until!=""){
 			$where = "year <= '".$year_until."'";
-			$this->db->where($where);
-		}
-
-		if (isset($type1) && $type1!=""){
-			$where = "type1 = '".$type1."'";
-			$this->db->where($where);
-		}
-
-		if (isset($type2) && $type2!=""){
-			$where = "type2 = '".$type2."'";
-			$this->db->where($where);
-		}
-
-		if (isset($type3) && $type3!=""){
-			$where = "type3 = '".$type3."'";
 			$this->db->where($where);
 		}
 
@@ -433,5 +418,12 @@ class Main_model extends CI_Model {
 		}
 		$ans.='</div>';
 		return $ans;
+	}
+
+	function get_car_date($vin){
+		$this->db->where('vin',$vin);
+		$this->db->order_by('query_date');
+		$this->db->limit(1);
+		return $this->db->get('user_queries')->row();
 	}
 }

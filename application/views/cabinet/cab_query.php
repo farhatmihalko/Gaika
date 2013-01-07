@@ -24,7 +24,7 @@
 						<a class="line-after block">
 							<?php
 								echo $value["car"].", ".$value["year"]." год";
-							?>
+								echo $value["query_date"]->query_date." ".$value["query_date"]->city;							?>
 						</a>
 						<span class="breadcum">
 							Vin-Code : 

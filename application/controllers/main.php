@@ -445,6 +445,7 @@ class Main extends CI_Controller {
 		foreach ($user_queries as $row) {
 
 			$my_cars[$row->vin]['car'] = $cars[$row->car_id];
+			$my_cars[$row->vin]['query_date'] = $this->main_model->get_car_date($row->vin);
 			$my_cars[$row->vin]['year'] = $this->main_model->get_car_year($row->vin);
 			$my_cars[$row->vin]['sellers'] = array();
 			array_push($my_cars[$row->vin]['parts'],$row->part);
@@ -497,7 +498,6 @@ class Main extends CI_Controller {
 	}
 
 	public function find_queries(){
-		$page = 1;
 		$style['basePathCss']= basePathCss; $style['basePathJs'] = basePathJs;
 		$this->image_path();
 		$company = $_POST['car-mark'];
@@ -506,12 +506,9 @@ class Main extends CI_Controller {
 		$year_from = $_POST['car-year-from'];
 		$year_until = $_POST['car-year-until'];
 		$category = $_POST['part_cat'];
-		$type1 = $_POST['part_type1'];
-		$type2 = $_POST['part_type2'];
-		$type3 = $_POST['part_type3'];
 		//print_r($_POST);
 		$queries = array();
-		$queries = $this->main_model->get_queries($company,$model,$city,$year_from,$year_until,$type1,$type2,$type3,$category);
+		$queries = $this->main_model->get_queries($company,$model,$city,$year_from,$year_until,$category);
 		//print_r($queries);
 		$res = array();
 		$info = array();
@@ -531,16 +528,6 @@ class Main extends CI_Controller {
 				}
 			}
 		}
-
-		$this->load->library('pagination');
-
-		$config['base_url'] = 'http://gaika.kz/index.php/main/find_queries/';
-		$config['total_rows'] = count($res);
-		$config['per_page'] = 25; 
-
- 		$this->pagination->initialize($config); 
-
-		$pagi = $this->pagination->create_links();
 
 		$true_res=array();
 		$counter=1;
@@ -585,6 +572,12 @@ class Main extends CI_Controller {
 	public function vincode_check(){
 		$vin = $_POST['car-vincode'];
 		$str = '0123456789ABCDEFGHJKLMNPRSTUVWXYZ';
+		if (strlen($vin)!=13)
+			return false;
+		foreach ($vin as $key => $value) {
+			# code...
+		}
+
 	}
 
 	public function add_query(){
