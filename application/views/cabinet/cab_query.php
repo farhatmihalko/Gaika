@@ -24,22 +24,33 @@
 						<a class="line-after block">
 							<?php
 								echo $value["car"].", ".$value["year"]." год";
-								echo $value["query_date"]->query_date." ".$value["query_date"]->city;							?>
+							?>
 						</a>
 						<span class="breadcum">
 							Vin-Code : 
 							<?php 
 								echo $key;
 							?>
-
+						</span>
+						<span class="breadcum">
+							Дата : 
+							<?php
+								echo $value["query_date"]->query_date;
+							?>
+						</span>
+						<span class="breadcum">
+							Город : 
+							<?php
+								echo $value["query_date"]->city;
+							?>
 						</span>
 					</div>
 					<div class="two columns align-center font-size-14">
 						<a>
 							<?php 
-								echo $this->session->userdata('id');
 								echo count($value['sellers']);
 							?>
+							<span class="breadcum"> ответило</span>
 						</a>
 					</div>
 					<div class="three columns adv-add-btn">
