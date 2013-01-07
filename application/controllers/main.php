@@ -598,20 +598,20 @@ class Main extends CI_Controller {
 		if ($car_mark=="" || $car_vincode==""){
 			$ans=1;
 		} else
-		for ($i=0; $i < count($part_names); $i++) {
+		for ($i=1; $i <= count($part_names); $i++) {
 			$car_id = $this->main_model->get_car_id($car_mark,$car_model);
 			if (is_null($car_id)){
 				$ans = 1;
 			} else
 				if (!is_null($part_names[$i]) && !is_null($part_cats[$i]))
 					$bo = $this->main_model->add_new_query($car_id,$part_names[$i],$car_year,$car_vincode,$city,$part_cats[$i]);
-				echo $bo;
+				//echo $bo;
 			if ($bo == false){
 				$ans=1;
 			}
 		}
-		//echo $car_vincode.' 1';
-		echo $ans;
+		//echo $ans;
+		redirect('main/view_my_queries');
 	}
 
 	public function change_user_settings(){

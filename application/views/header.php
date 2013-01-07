@@ -59,7 +59,9 @@
 								else { 
 									echo $this->session->userdata("type");
 									if ($this->session->userdata('type')=='user'){?>
-								  <!--это простой юзер-->
+
+								  <!--Вот отсюда начинается юзер-->
+								  
 									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
 									<div class="inline">
 										<a class="dropdown-open pointer"><i class="icon-user pad-right"></i>Мой кабинет</a>
@@ -95,8 +97,13 @@
 											</li>
 										</ul>
 									</div>
+
+									<!--Тут юзер заканчивается-->
+
 								<?php } elseif($this->session->userdata('type')=='seller'){?>
-									<!--end of user-->
+
+									<!--Тут продавец начинается-->
+
 									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
 									<div class="inline">
 										<a class="dropdown-open pointer"><i class="icon-user pad-right"></i>Мой кабинет</a>
@@ -132,6 +139,9 @@
 											</li>
 										</ul>
 									</div>
+
+									<!--Тут продавец заканчивается-->
+
 								<?php }}
 							} else {?>
 									<a href="<?php echo base_url();?>"><i class="icon-home pad-right"></i>Главная</a>
