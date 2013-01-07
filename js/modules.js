@@ -155,7 +155,7 @@ modules["select-autocomplete-module"] = (function(){
 			data : value,
 			success : function(html){
 				target.removeAttr("disabled");
-				target.html("<option value=''>Любая</option>");
+				target.html("<option value='Любая'>Любая</option>");
 				target.append(html);
 			},
 			error : function(){
@@ -316,7 +316,43 @@ modules["user-add-new-module"] = (function(){
 		initialize : init,
 		worker : worker
 	}
-})
+});
+
+modules["about-site-tab-module"] = (function(){
+	var data = {
+		getMenu : function(){
+			return $("#js-tab");
+		},
+		active : null
+	}
+	var init = function(){
+		var mm = data.getMenu();
+		mm.find("li").each(function(){
+			if($(this).hasClass("active"))
+				data.active = $(this)
+		})
+		mm.find("a").each(function(){
+			$(this).bind("click", function(){
+				worker($(this));
+			});
+		});
+	}
+	var worker = function(object){
+		if(object.parent().hasClass("active"))
+			return false;
+		if(data.active){
+			$("#js-tab-content-" + data.active.attr("data-target")).hide();
+			data.active.removeClass("active");
+		}
+		data.active = object.parent().addClass("active");
+		$("#js-tab-content-" + data.active.attr("data-target")).show();
+		//second part
+	}
+	return{
+		initialize : init,
+		worker : worker
+	}
+});
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!
