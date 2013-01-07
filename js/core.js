@@ -79,4 +79,13 @@ $(document).ready(function(){
 });
 
 function uiGarbase(){
+
+	$("#js-user-table").bind("click", function(){
+		$("#js-user-type-list").hide();
+		$("#js-user-type-table").fadeIn("fast");
+	});
+	$("#js-user-list").bind("click", function(){
+		$("#js-user-type-table").hide();
+		$("#js-user-type-list").fadeIn("fast");
+	});
 }
