@@ -574,10 +574,12 @@ class Main extends CI_Controller {
 		$str = '0123456789ABCDEFGHJKLMNPRSTUVWXYZ';
 		if (strlen($vin)!=13)
 			return false;
-		foreach ($vin as $key => $value) {
-			# code...
+		$vin_arr = str_split($vin);
+		foreach ($vin_arr as $key => $value) {
+			if (!strripos($str, $value))
+				return false;
 		}
-
+		return true;
 	}
 
 	public function add_query(){
@@ -589,7 +591,8 @@ class Main extends CI_Controller {
 		$part_names = $_POST['part_name'];
 		$part_cats = $_POST['part_cat'];
 		$num = count($part_names);
-		$this->vincode_check();
+		if (!$this->vincode_check())
+			return;
 		$ans = 0;
 		$bo = true;
 		if ($car_mark=="" || $car_vincode==""){
