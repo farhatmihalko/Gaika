@@ -582,6 +582,11 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function vincode_check(){
+		$vin = $_POST['car-vincode'];
+		$str = '0123456789ABCDEFGHJKLMNPRSTUVWXYZ';
+	}
+
 	public function add_query(){
 		$car_mark = $_POST['car-mark'];
 		$car_model = $_POST['car-model'];
@@ -591,8 +596,7 @@ class Main extends CI_Controller {
 		$part_names = $_POST['part_name'];
 		$part_cats = $_POST['part_cat'];
 		$num = count($part_names);
-		if (!isset($part_types1))
-			$part_types1=array();
+		$this->vincode_check();
 		$ans = 0;
 		$bo = true;
 		if ($car_mark=="" || $car_vincode==""){
