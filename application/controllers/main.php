@@ -816,12 +816,16 @@ class Main extends CI_Controller {
 
 		$this->form_validation->set_rules('title','Title','required');
 		$this->form_validation->set_rules('content','Content','required');
+		$this->form_validation->set_rules('city','City','required');
 
 		if ($this->form_validation->run()){
 			$this->main_model->add_news();
 		}
 
-		$this->load->view('add_news_view');
+		$data['cities'] = $this->main_model->get_cities();
+
+		$this->load->view('header',$style);
+		$this->load->view('add_news_view',$data);
 	}
 }
 ?>
