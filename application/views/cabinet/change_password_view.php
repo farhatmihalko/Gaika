@@ -18,12 +18,35 @@
 		<!--End of header-->
 		<div class="twelve columns line-before">
 			<div class="ten columns end">
-				<?php echo validation_errors();?>
-				<?php echo form_open("main/change_password");?>	
-					<input type="password" name="old" placeholder="Старый" required> 
-					<input type="password" name="new1" placeholder="Новый" required> 
-					<input type="password" name="new2" placeholder="подтверждение" required> 
-					<button class="btn btn-green button">
+				<span class="breadcum">	
+					<?php echo validation_errors();?>
+				</span>
+				<?php echo form_open("main/change_password");?>
+					<div class="line-after">
+						<label for="query-pass-old" class="list-name">
+							<strong>Ваш старый пароль</strong>
+							 (Например : ********)
+						</label>	
+						<input type="password" name="old" id="query-pass-old" 
+						placeholder="Старый" required> 
+					</div>
+					<div class="line-after">
+						<label for="query-pass-new" class="list-name">
+							<strong>Ваш новый пароль</strong>
+							 (Рекомендуется ставить пароли сложнее)
+						</label>
+						<input type="password" name="new1" id="query-pass-new"
+						placeholder="Новый" required> 
+					</div>
+					<div class="line-after">
+						<label for="query-pass-repeat" class="list-name">
+							<strong>Повторите ваш новый пароль</strong>
+							 (Рекомендуется ставить пароли сложнее)
+						</label>
+						<input type="password" name="new2" id="query-pass-repeat" 
+						placeholder="Повторите новый" required> 
+					</div>
+					<button class="btn btn-green button line-before">
 						Сохранить
 					</button>
 				</form>

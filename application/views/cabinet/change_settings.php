@@ -19,12 +19,24 @@
 		<div class="twelve columns line-before">
 			<div class="ten columns end">
 				<?php echo validation_errors();?>
-				<?php echo form_open('main/change_user_settings'); ?>
-					<input type="text" name="name" maxlength="100" 
-					placeholder="<?php echo $this->session->userdata('name');?>"/>
-					<input type="text" name="phone" maxlength="50"
-					placeholder="<?php echo $this->session->userdata('phone');?>"/>
-					<button class="btn btn-green button">
+				<?php echo form_open("main/change_user_settings"); ?>
+					<div class="line-after">
+						<label for="query-name" class="list-name">
+							<strong>Ваше имя</strong>
+							 (Например : Кумар)
+						</label>
+						<input type="text" name="name" maxlength="100" id="query-name"
+						placeholder="<?php echo $this->session->userdata('name');?>"/>
+					</div>
+					<div class="line-afer">
+						<label for="query-phone" class="list-name">
+							<strong>Ваш телефон</strong>
+							 (Например : +77771033041)
+						</label>
+						<input type="text" name="phone" maxlength="50" id="query-phone"
+						placeholder="<?php echo $this->session->userdata('phone');?>"/>
+					</div>
+					<button class="btn btn-green button line-before">
 						Сохранить
 					</button>
 				</form>
