@@ -89,6 +89,7 @@ class Main extends CI_Controller {
 						'id' => $user->id,
 						'name' => $user->name,
 						'type'=> 'user',
+						'phone' => $user->phone,
 						'city' => $user->city,
 						'delete_approve' => $user->delete_approve,
 						);
@@ -640,46 +641,35 @@ class Main extends CI_Controller {
 			redirect('main');
 		$this->form_validation->set_rules('name','Имя','trim|xss_clean');
 		$this->form_validation->set_rules('phone','Номер телефона','trim|xss_clean');
-		$name = $_POST['name'];
-		$phone = $_POST['phone'];
 		if ($this->form_validation->run() == TRUE){
-			$this->main_model->update_user_info($name,$phone);
+			$this->main_model->update_user_info();
 		}
-		redirect('main/view_my_queries'); 
+		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+
+		$this->load->view('header',$style);
+		$this->load->view('cabinet/cab_change_settings');
+		$this->load->view('footer');
 	}
 
 	public function change_seller_settings(){
 		if ($this->session->userdata('type')!='seller')
 			redirect('main');
-		$adress = $_POST['adress'];
-		$phone1 = $_POST['phone1'];
-		$phone2 = $_POST['phone2'];
-		$phone3 = $_POST['phone3'];
-		$about = $_POST['about'];
-		$img = $this->session->userdata('image-path');
-		$old = './imgs/'.$img;
-		$new = './imgs/gaika-'.$img;
-		if ($img!=''){
-			rename($old,$new);
-			$img = 'gaika-'.$img;
+
+		$this->form_validation->set_rules('adress','Адрес','trim|xss_clean');
+		$this->form_validation->set_rules('phone1','Номер телефона №1','trim|xss_clean');
+		$this->form_validation->set_rules('phone2','Номер телефона №2','trim|xss_clean');
+		$this->form_validation->set_rules('phone3','Номер телефона №3','trim|xss_clean');
+		$this->form_validation->set_rules('about','О компании','trim|xss_clean');
+
+		if ($this->form_validation->run()){
+			$this->main_model->update_seller_info();
 		}
-		$this->main_model->update_seller_info($adress,$phone1,$phone2,$phone3,$about,$img);
-		redirect('main/view_seller_settings');
-	}
 
-	public function view_seller_settings(){
-		if ($this->session->userdata('type')!='seller')
-			redirect('main');
+		$data['seller'] = $this->main_model->get_seller_by_id($id);
 
-		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
-
-		$seller = $this->main_model->get_seller_by_id($this->session->userdata('id'));
-		$data['seller'] = $seller;
-
 		$this->load->view('header',$style);
-		$this->load->view('seller/sel_menu');
-		$this->load->view('change_seller_settings_view',$data);
+		$this->load->view('seller/change_settings',$data);
 		$this->load->view('footer');
 	}
 

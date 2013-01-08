@@ -280,23 +280,21 @@ class Main_model extends CI_Model {
 		return $data->year;
 	}
 
-	function update_user_info($name,$phone){
-		$data = array(	'name'=>$name,
-						'phone'=>$phone);
+	function update_user_info(){
+		$data = array(	'name'=>$_POST['name'],
+						'phone'=>$_POST['phone']);
 		$this->db->where('id',$this->session->userdata('id'));
+		$this->session->set_userdata($data);
 		return $this->db->update('users',$data);
 	}
 
-	function update_seller_info($adress,$phone1,$phone2,$phone3,$about,$img){
-		$data = array(	'adress' => $adress,
-						'phone1' => $phone1,
-						'phone2' => $phone2,
-						'phone3' => $phone3,
-						'about' => $about
+	function update_seller_info(){
+		$data = array(	'adress' => $_POST['adress'],
+						'phone1' => $_POST['phone1'],
+						'phone2' => $_POST['phone2'],
+						'phone3' => $_POST['phone3'],
+						'about' => $_POST['about']
 					);
-		if ($img!=''){
-			$data['img'] = $img;
-		}
 		$this->db->where('id',$this->session->userdata('id'));
 		$this->db->update('sellers',$data);
 	}
