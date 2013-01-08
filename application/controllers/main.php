@@ -647,7 +647,7 @@ class Main extends CI_Controller {
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
 		$this->load->view('header',$style);
-		$this->load->view('cabinet/cab_change_settings');
+		$this->load->view('cabinet/change_settings');
 		$this->load->view('footer');
 	}
 
