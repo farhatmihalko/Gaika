@@ -504,12 +504,25 @@ class Main extends CI_Controller {
 			redirect('main');
 		$style['basePathCss']= basePathCss; $style['basePathJs'] = basePathJs;
 		$this->image_path();
-		$company = $_POST['car-mark'];
-		$model = $_POST['car-model'];
-		$city = $_POST['city'];
-		$year_from = $_POST['car-year-from'];
-		$year_until = $_POST['car-year-until'];
-		$category = $_POST['part_cat'];
+		$company = '';
+		$model = '';
+		$city = '';
+		$year_from = '';
+		$year_until = '';
+		$category = '';
+
+		if (isset($_POST['car-mark']))
+			$company = $_POST['car-mark'];
+		if (isset($_POST['car-model']))
+			$model = $_POST['car-model'];
+		if (isset($_POST['city']))
+			$city = $_POST['city'];
+		if (isset($_POST['car-year-from']))
+			$year_from = $_POST['car-year-from'];
+		if (isset($_POST['car-year-until']))
+			$year_until = $_POST['car-year-until'];
+		if (isset($_POST['part_cat']))
+			$category = $_POST['part_cat'];
 		//print_r($_POST);
 		$queries = array();
 		$queries = $this->main_model->get_queries($company,$model,$city,$year_from,$year_until,$category);
@@ -535,18 +548,18 @@ class Main extends CI_Controller {
 
 		$true_res=array();
 		$counter=1;
-		foreach ($res as $key => $value) {
+		/*foreach ($res as $key => $value) {
 			if ($counter>($page-1)*25 && $counter<=$page*25){
 				$true_res[$key] = $value;
 			}
-		}
+		}*/
 		$cars = $this->main_model->get_car_map();
 		$result['queries'] = $queries;
 		$result['res'] = $res;
 		$result['info'] = $info;
 		$result['cars'] = $cars;
 		$result['dates'] = $dates;
-		$result['pagination'] = $pagi;
+		//$result['pagination'] = $pagi;
 
 		$data['companies'] = $this->main_model->get_companies();
 		$data['parts'] = $this->main_model->get_parts();
