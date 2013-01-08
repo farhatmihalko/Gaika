@@ -181,9 +181,11 @@ class Main extends CI_Controller {
 	public function change_password(){
 		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+
 		$this->form_validation->set_rules('old','Старый пароль','trim|xss_clean|callback_check_pass');
 		$this->form_validation->set_rules('new1','Новый пароль','trim|xss_clean');
 		$this->form_validation->set_rules('new2','Подтверждение пароля','trim|xss_clean|matches[new1]');
+
 		if ($this->form_validation->run() == TRUE){
 			$salt = $this->get_random_salt();
 			$pwd = $this->compute_pass($_POST['new1'],$salt);
@@ -191,40 +193,11 @@ class Main extends CI_Controller {
 				$this->main_model->change_seller_pass($this->session->userdata('id'),$pwd,$salt);
 			if ($this->session->userdata('type')=='user')
 				$this->main_model->change_user_pass($this->session->userdata('id'),$pwd,$salt);
-			redirect('main');
-		} else{
-			if ($this->session->userdata('type')!='user')
-				redirect('main');
-			$cars = $this->main_model->get_user_cars();
-			$user_queries = $this->main_model->get_current_user_queries();
-			$my_cars = array();
-			foreach ($user_queries as $row){
-				$my_cars[$row->vin]['parts'] = array();
-			}
-			foreach ($user_queries as $row) {
-
-				$my_cars[$row->vin]['car'] = $cars[$row->car_id];
-				$my_cars[$row->vin]['year'] = $this->main_model->get_car_year($row->vin);
-				$my_cars[$row->vin]['sellers'] = array();
-				array_push($my_cars[$row->vin]['parts'],$row->part);
-				$offers = $this->main_model->get_offers_by_vin($row->vin);
-				foreach ($offers as $bow) {
-						$seller = new $this->seller();
-						$seller->individual($bow->seller_id,$row->vin);
-						array_push($my_cars[$row->vin]['sellers'],$seller);
-				}
-				
-			}
-			$data['info'] = $my_cars;
-			$person['info'] = $this->main_model->get_user_by_id($this->session->userdata('id'));
-
-			$this->load->view('header',$style);
-			$this->load->view('cabinet/cab_menu');
-			$this->load->view('cabinet/cab_query',$data);
-			$this->load->view('cabinet/cab_setting',$person);
-			$this->load->view('change_password_view');
-			$this->load->view('footer');
 		}
+			
+		$this->load->view('header',$style);
+		$this->load->view('change_password_view');
+		$this->load->view('footer');
 	}
 
 	public function check_pass(){
@@ -665,7 +638,7 @@ class Main extends CI_Controller {
 			$this->main_model->update_seller_info();
 		}
 
-		$data['seller'] = $this->main_model->get_seller_by_id($id);
+		$data['seller'] = $this->main_model->get_seller_by_id($this->session->userdata('id'));
 
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 		$this->load->view('header',$style);
