@@ -763,10 +763,10 @@ class Main extends CI_Controller {
 
 
 	public function restore_password(){
-		$mail = $_POST['mail'];
 		$header_ ='MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n"; 	
 		$this->form_validation->set_rules('mail','E-mail','trim|xss_clean|required|valid_email');
 		if ($this->form_validation->run()==TRUE){
+			$mail = $_POST['mail'];
 			$hash = sha1($mail);
 			$this->main_model->restore_link($mail,$hash);
 			$dehash = 'http://gaika.kz/index.php/main/deactivate_restore/'.$hash;
