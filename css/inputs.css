@@ -339,3 +339,18 @@ textarea{
 .btn-line-height{
   line-height: 30px;
 }
+
+
+/*metro style buttons*/
+.btn_metro{
+  padding : 4px 10px;
+  border : 1px solid #ddd;
+  cursor: pointer;
+  display: inline-block;
+  background: white;
+  color: gray;
+}
+.metro_mr-4{
+  margin-top : 2px;
+}
+/*end of metro style*/

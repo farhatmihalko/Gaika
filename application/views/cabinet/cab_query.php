@@ -72,13 +72,13 @@
 					</a>
 				</div>
 				<div class="three columns">
-					<div class="breadcum adv-add-btn">
-						<button class="btn btn-red button font-size-11">
+					<div class="adv-add-btn">
+						<a class="btn_metro font-size-13">
 							<i class="icon-trash pad-right"></i> Удалить
-						</button>
-						<button class="btn btn-green button font-size-11">
+						</a>
+						<a class="btn_metro font-size-13 metro_mr-4">
 							<i class="icon-star pad-right"></i> Посмотреть
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -127,10 +127,10 @@
 						</a>
 					</div>
 					<div class="three columns adv-add-btn">
-						<button class="btn btn-red button center" id="js-action-button" data-id="<?php echo $key;?>" 
-							data-url="<?php echo base_url('index.php/main/accept_answer');?>">
+						<a class="btn_metro font-size-50" id="js-action-button" data-id="<?php echo $key;?>"
+						data-url="<?php echo base_url('index.php/main/accept_answer');?>">
 							<i class="icon-trash"></i>
-						</button>
+						</a>
 					</div>
 				</div>
 			<?php
@@ -148,7 +148,7 @@
 				<div class="right">
 					<span class="breadcum inline">
 						В случае нажатия 
-						<img src="<?php echo base_url('images/user/help-remove-button.PNG');?>" alt="" class="vertical-align-m">
+						<i class="icon-trash font-size-18"></i>
 						вы удалите ваш запрос
 					</span>
 				</div>
