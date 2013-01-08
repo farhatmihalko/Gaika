@@ -128,16 +128,14 @@
 				            	</li>
 				            	<li class="dropdown-divider"></li>
 											<li>
-												<a class="pointer" id="js-module-modal" data-target="js-modal-user-settings">
+												<a href="<?php echo base_url('index.php/main/change_user_settings');?>">
 													<i class="icon-certificate pad-right"></i>Настройки профиля
+												</a>
+												<a href="<?php echo base_url('index.php/main/change_password');?>">
+													<i class="icon-lock pad-right"></i>Смена пароля
 												</a>
 											</li>
 											<li class="dropdown-divider"></li>
-											<li>
-												<a id="js-module-modal" data-target="js-modal-user-help" class="pointer">
-													<i class="icon-group pad-right"></i>Как пользоваьтся?
-												</a>
-											</li>
 											<li>
 												<a href="<?php echo base_url('index.php/main/contact_form');?>">
 													<i class="icon-pencil pad-right"></i>Написать нам
@@ -178,7 +176,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="<?php echo base_url('index.php/main/view_seller_settings')?>">
+												<a href="<?php echo base_url('index.php/main/change_seller_settings')?>">
 													<i class="icon-certificate pad-right"></i>Настройки профиля
 												</a>
 											</li>
