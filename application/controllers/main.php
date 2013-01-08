@@ -665,7 +665,7 @@ class Main extends CI_Controller {
 			$this->main_model->update_seller_info();
 		}
 
-		$data['seller'] = $this->main_model->get_seller_by_id($id);
+		$data['seller'] = $this->main_model->get_seller_by_id($this->session->userdata('id'));
 
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 		$this->load->view('header',$style);
