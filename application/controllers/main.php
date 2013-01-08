@@ -196,7 +196,7 @@ class Main extends CI_Controller {
 		}
 			
 		$this->load->view('header',$style);
-		$this->load->view('change_password_view');
+		$this->load->view('cabinet/change_password_view');
 		$this->load->view('footer');
 	}
 

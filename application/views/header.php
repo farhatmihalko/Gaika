@@ -44,14 +44,14 @@
 							else {
 						?>
 							<?php
-								if($this->session->userdata("type") == "seller"){
+								if($this->session->userdata("type") == "seller" && !(isset($bool))){
 							?>	
 							<!--seller place-->
 
 							<!--end of seller place-->
 							<?php	
 								}
-								else if($this->session->userdata("type") == "user"){
+								else if($this->session->userdata("type") == "user" && !(isset($bool))){
 							?>
 							<!--user place-->
 							<div class="inline">

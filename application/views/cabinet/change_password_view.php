@@ -3,10 +3,10 @@
 		<!--Settings header-->
 		<div class="twelve columns line-after">
 			<ul class="about_list pad-left-big">
-				<li class="active">
+				<li>
 					<a href="<?php echo base_url('index.php/main/change_user_settings');?>">Настройки профиля</a>
 				</li>
-				<li>
+				<li class="active">
 					<a href="<?php echo base_url('index.php/main/change_password');?>">Смена пароля</a>
 				</li>
 				<li>
@@ -19,11 +19,10 @@
 		<div class="twelve columns line-before">
 			<div class="ten columns end">
 				<?php echo validation_errors();?>
-				<?php echo form_open('main/change_user_settings'); ?>
-					<input type="text" name="name" maxlength="100" 
-					placeholder="<?php echo $this->session->userdata('name');?>"/>
-					<input type="text" name="phone" maxlength="50"
-					placeholder="<?php echo $this->session->userdata('phone');?>"/>
+				<?php echo form_open("main/change_password");?>	
+					<input type="password" name="old" placeholder="Старый" required> 
+					<input type="password" name="new1" placeholder="Новый" required> 
+					<input type="password" name="new2" placeholder="подтверждение" required> 
 					<button class="btn btn-green button">
 						Сохранить
 					</button>

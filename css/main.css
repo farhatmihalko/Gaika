@@ -387,3 +387,9 @@ ul{
 .a_type_cat{
 	background: #F9F9FF;
 }
+
+/*settings page*/
+.page_settings{
+	min-height : 300px;
+}
+/*end of settings page*/
