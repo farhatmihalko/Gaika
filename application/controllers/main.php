@@ -473,6 +473,8 @@ class Main extends CI_Controller {
 	}
 
 	public function view_seller_answers($vin,$seller){
+		if ($this->session->userdata('type')!='user')
+			redirect('main');
 		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 		$menu['id'] = $seller;
@@ -498,6 +500,8 @@ class Main extends CI_Controller {
 	}
 
 	public function find_queries(){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
 		$style['basePathCss']= basePathCss; $style['basePathJs'] = basePathJs;
 		$this->image_path();
 		$company = $_POST['car-mark'];
@@ -555,7 +559,9 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function view_personal_queries($id){
+	/*public function view_personal_queries($id){
+		if ($this->session->userdata('type')!='user')
+			redirect('main');
 		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
@@ -567,7 +573,7 @@ class Main extends CI_Controller {
 		$this->load->view('header',$style);
 		$this->load->view('personal_queries_view',$data);
 		$this->load->view('footer');
-	}
+	}*/
 
 	public function vincode_check(){
 		$vin = $_POST['car-vincode'];
@@ -583,6 +589,8 @@ class Main extends CI_Controller {
 	}
 
 	public function add_query(){
+		if ($this->session->userdata('type')!='user')
+			redirect('main');
 		$car_mark = $_POST['car-mark'];
 		$car_model = $_POST['car-model'];
 		$car_year = $_POST['car-year'];
@@ -615,6 +623,8 @@ class Main extends CI_Controller {
 	}
 
 	public function change_user_settings(){
+		if ($this->session->userdata('type')!='user')
+			redirect('main');
 		$this->form_validation->set_rules('name','Имя','trim|xss_clean');
 		$this->form_validation->set_rules('phone','Номер телефона','trim|xss_clean');
 		$name = $_POST['name'];
@@ -626,6 +636,8 @@ class Main extends CI_Controller {
 	}
 
 	public function change_seller_settings(){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
 		$adress = $_POST['adress'];
 		$phone1 = $_POST['phone1'];
 		$phone2 = $_POST['phone2'];
@@ -643,6 +655,9 @@ class Main extends CI_Controller {
 	}
 
 	public function view_seller_settings(){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
+
 		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
@@ -655,7 +670,7 @@ class Main extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function show_reg_user(){
+	/*public function show_reg_user(){
 		$this->image_path();
 		$data['cities']=array();
 		$data['cities']=$this->main_model->get_cities();
@@ -672,7 +687,7 @@ class Main extends CI_Controller {
 	//Fara dobavil
 	public function show_login_form(){
 		$this->image_path();
-	}
+	}*/
 
 	public function get_models(){
 		$company = $_POST['company'];
@@ -685,6 +700,9 @@ class Main extends CI_Controller {
 	}
 
 	public function add_answer(){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
+
 		$price = $_POST['price'];
 		$comment = $_POST['comment'];
 		$query_id = $_POST['query_id'];
@@ -705,6 +723,8 @@ class Main extends CI_Controller {
 	}
 
 	public function accept_answer(){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
 		$vin = $_POST['id'];
 		$car = $this->main_model->get_queries_by_vin($vin);
 		foreach ($car as $obj) {
@@ -713,6 +733,8 @@ class Main extends CI_Controller {
 	}
 
 	public function delete_query($id){
+		if ($this->session->userdata('type')!='seller')
+			redirect('main');
 		$this->main_model->delete_query($id);
 		$this->main_model->delete_related_answers($id);
 	}
@@ -811,6 +833,8 @@ class Main extends CI_Controller {
 	}
 
 	public function add_news(){
+		if ($this->session->userdata('type')!='admin')
+			redirect('main');
 		$this->image_path();
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
