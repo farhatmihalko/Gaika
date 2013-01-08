@@ -241,6 +241,9 @@ ul{
 	left: auto;
 	right: 37px;
 }
+.dropdown-menu-help{
+	width : 210px;
+}
 .dropdown-profile{
 	right : 28px;
 	width: 240px;

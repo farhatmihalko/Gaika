@@ -140,9 +140,6 @@
 
 		<div class="twelve columns line-before-big">
 			<div class="seven columns">
-				<button class="submenu-a" id="js-module-modal" data-target="js-modal-user-help-query">
-					<i class="icon-star pad-right"></i>Как подавать заявку
-				</button>
 			</div>
 			<div class="five columns">
 				<div class="right">

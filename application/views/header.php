@@ -43,11 +43,50 @@
 							}
 							else {
 						?>
-							<a class="font-gray-bold pointer">
-								Ваш баланс : <span class="breadcum inline">100 тенге</span>
-							</a>
+							<?php
+								if($this->session->userdata("type") == "seller"){
+							?>	
+							<!--seller place-->
+
+							<!--end of seller place-->
+							<?php	
+								}
+								else if($this->session->userdata("type") == "user"){
+							?>
+							<!--user place-->
+							<div class="inline">
+								<a class="dropdown-open pointer"><i class="icon-h-sign pad-right"></i>Как пользоваться?</a>
+								<ul class="dropdown-menu dropdown-menu-help" style="display: none;">
+									<li class="dropdown-caret">
+					               		 <span class="caret-outer"></span>
+					               	 	 <span class="caret-inner"></span>
+					            	</li>
+					            	<li>
+				            			<a class="bold pointer" id="js-module-modal" data-target="js-modal-user-help">
+				            				<i class="icon-group pad-right"></i>Общая справка
+					            		</a>
+					            	</li>
+					            	<li class="dropdown-divider"></li>
+				            		<li>
+				            			<a class="pointer" id="js-module-modal" data-target="js-modal-user-help-query">
+				            				<i class="icon-edit pad-right"></i>Как подавать заявку
+					            		</a>
+					            	</li>
+					            	<li>
+										<a class="pointer" id="js-module-modal" data-target="js-modal-user-settings">
+											<i class="icon-certificate pad-right"></i>Настройки
+										</a>
+									</li>
+					            	<li class="dropdown-divider"></li>
+								</ul>
+							</div>
+							<!--end of user place-->
+							<?php
+								}
+							?>
 						<?php
 							}
+							//end
 						?>
 					</div>
 				</div>
@@ -182,63 +221,72 @@
 		<!--end header-->
 
 <div>
-	<!--help for seller-->
-	<div class="row">
-	<!--Helps-->
-		<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-seller-help">
-			<div class="close-button"></div>
-			<h4 class="line-after font-color-l-blue"><i class="icon-bookmark pad-right"></i>Помощь по нашему сервису</h4>
-			<hr class="hr-dashed">
-				<p>
-					Привет продавец запчастей, здесь в личном кабинете вы сможете видеть все запросы,
-				 	которые приходят от покупателей запчастей. 
-				 	Вы можете искать используя фильтр (по модели, марки, году и остальным деталям)
-					или искать в общем списке в нижней части личного кабинета.
-				</p>
-				<p>
-					1. Добавьте дополнительные данные о своей компании пройдя по 
-					<a href ="<?php echo base_url('index.php/main/view_seller_settings')?>">данной ссылке</a>
-					или нажмите кнопку "настройки".
-					<br>
-					2. Вы можете оставлять свою цену и  комментарии к запчастям.
-					<br>
-					3. Просмотреть данные свои ответы на запросы можете пройдя по 
-					<a href ="<?php echo base_url('index.php/main/my_answers')?>">данной ссылке</a>.
-					<div class="color-b-254 border-color-g253 pad">
-						<p>
-							Если у вас появились предложения или замечания, свяжитесь с нами по почте <a href="mailto:info@gaika.kz" class="breadcum bold inline">info@gaika.kz</a> 
-							<br>
-							Также вы можете написать нам с помошью <a href="<?php echo base_url('index.php/main/contact_form');?>" class="breadcum bold inline">формы обращения</a>.
-						</p>	
-					</div>
-				</p>	
+	<?php
+		if ($this->session->userdata("type") == "seller"){
+	?>
+		<!--help for seller-->
+		<div class="row">
+		<!--Helps-->
+			<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-seller-help">
+				<div class="close-button"></div>
+				<h4 class="line-after font-color-l-blue"><i class="icon-bookmark pad-right"></i>Помощь по нашему сервису</h4>
+				<hr class="hr-dashed">
+					<p>
+						Привет продавец запчастей, здесь в личном кабинете вы сможете видеть все запросы,
+					 	которые приходят от покупателей запчастей. 
+					 	Вы можете искать используя фильтр (по модели, марки, году и остальным деталям)
+						или искать в общем списке в нижней части личного кабинета.
+					</p>
+					<p>
+						1. Добавьте дополнительные данные о своей компании пройдя по 
+						<a href ="<?php echo base_url('index.php/main/view_seller_settings')?>">данной ссылке</a>
+						или нажмите кнопку "настройки".
+						<br>
+						2. Вы можете оставлять свою цену и  комментарии к запчастям.
+						<br>
+						3. Просмотреть данные свои ответы на запросы можете пройдя по 
+						<a href ="<?php echo base_url('index.php/main/my_answers')?>">данной ссылке</a>.
+						<div class="color-b-254 border-color-g253 pad">
+							<p>
+								Если у вас появились предложения или замечания, свяжитесь с нами по почте <a href="mailto:info@gaika.kz" class="breadcum bold inline">info@gaika.kz</a> 
+								<br>
+								Также вы можете написать нам с помошью <a href="<?php echo base_url('index.php/main/contact_form');?>" class="breadcum bold inline">формы обращения</a>.
+							</p>	
+						</div>
+					</p>	
+			</div>
+		<!--end of help-->
 		</div>
-	<!--end of help-->
-	</div>
 	<!--end of help for seller-->
-
-	<!--help for user-->
-	<div class="row">
-	<!--Helps-->
-		<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-user-help">
-			<div class="close-button"></div>
-			<h4 class="line-after font-color-l-blue"><i class="icon-bookmark pad-right"></i>Помощь по нашему сервису</h4>
-			<hr class="hr-dashed">
-				<p>
-					Привет пользователь, наш сервис поможет вам найти самые наилучшие предложения по вашим запросам!
-				</p>
-				<p>
-					1. Для того чтобы сделать запрос по запчастям, нажмите кнопку 
-					<a class="pointer">"дать заявки"</a>
-					<br>
-					2. В <a class="pointer">настройках</a> вы можете поменять свои личные данные
-					<br>
-					3. Пройдя по ссылке <a class="pointer">"мои заявки"</a> вы сможете просмотреть свои заявки
-				</p>	
+	<?php
+		}
+		else if($this->session->userdata("type") == "user"){
+	?>
+		<!--help for user-->
+		<div class="row">
+		<!--Helps-->
+			<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-user-help">
+				<div class="close-button"></div>
+				<h4 class="line-after font-color-l-blue"><i class="icon-bookmark pad-right"></i>Помощь по нашему сервису</h4>
+				<hr class="hr-dashed">
+					<p>
+						Привет пользователь, наш сервис поможет вам найти самые наилучшие предложения по вашим запросам!
+					</p>
+					<p>
+						1. Для того чтобы сделать запрос по запчастям, нажмите кнопку 
+						<a class="pointer">"дать заявки"</a>
+						<br>
+						2. В <a class="pointer">настройках</a> вы можете поменять свои личные данные
+						<br>
+						3. Пройдя по ссылке <a class="pointer">"мои заявки"</a> вы сможете просмотреть свои заявки
+					</p>	
+			</div>
+		<!--end of help-->
 		</div>
-	<!--end of help-->
-	</div>
-	<!--end of help for user-->
+		<!--end of help for user-->
+	<?php
+		}
+	?>
 </div>
 
 
