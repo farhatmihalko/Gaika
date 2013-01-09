@@ -367,6 +367,28 @@ modules["seller-answer-module"] = (function(){
 		},
 		get : function(){
 			return $("#js-seller-place");
+		},
+		sendAjax : function(){
+			$("#js-seller-give-answer").on("submit", function(){
+				var data = $(this).serialize();
+				var url = $(this).attr("data-url");
+				//ajax caller
+				$.ajax({
+					url : url,
+					data : data,
+					type : "POST",
+					success : function(res){
+						if(res == 0){
+							alert("Все прошло успешно!");
+						}else if(res == 1){
+							alert("У вас недостаточно денег на счете. Пополните баланс!");
+						}else{
+							alert("Ошибочка!");
+						}
+					}
+				});
+				return false;
+			});
 		}
 	}
 	var init = function(){
@@ -376,6 +398,8 @@ modules["seller-answer-module"] = (function(){
 				worker(cont);
 			});
 		});
+		//bind ajax set!
+		place.sendAjax();
 	}
 	var worker = function(content){
 		place.set("");
@@ -389,6 +413,9 @@ modules["seller-answer-module"] = (function(){
 	}
 
 	//private functions
+	function remove(){
+		
+	}
 });
 
 /*
