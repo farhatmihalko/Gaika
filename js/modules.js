@@ -55,6 +55,15 @@ modules["modal-window-module"] = function(){
 		//custom need to refactoring
 		preparation();
 		worker();
+		//add to sandbox functionality and module
+		T_SANDBOX.addModule("modal", {
+			close : function(){
+				fullClose();
+			},
+			getOpened : function(){
+				return opened;
+			}
+		});
 	}
 	var worker = function(){
 		$("#js-module-modal").live("click", function(){
@@ -62,8 +71,7 @@ modules["modal-window-module"] = function(){
 			showModal($("#"+data));
 		});
 		$(".close-button").live("click", function(){
-			closeModal();
-			closeOverlay();
+			fullClose();
 		});
 	}
 	return {
@@ -81,14 +89,11 @@ modules["modal-window-module"] = function(){
 		});
 		data.overlay().bind("click", function(){
 			return false;
-			closeOverlay();
-			closeModal();
+			fullClose();
 		});
 		$(document).bind("keydown", function(e){
-			if(e.keyCode == 27){
-				closeOverlay();
-				closeModal();
-			}
+			if(e.keyCode == 27)
+				fullClose();
 		});
 	}
 	/*closeOverlay
@@ -127,15 +132,10 @@ modules["modal-window-module"] = function(){
 		}
 		opened.length = 0;
 	}
-	//add to sandbox functionality and module
-	T_SANDBOX.addModule("modal", {
-		close : function(){
-			closeModal();
-		},
-		getOpened : function(){
-			return opened;
-		}
-	});
+	function fullClose(){
+		closeModal();
+		closeOverlay();
+	}
 }
 
 
@@ -390,13 +390,16 @@ modules["seller-answer-module"] = (function(){
 					success : function(res){
 						var arr = "";
 						var status = true;
+						var bt = false;
 						for(var i = 0; i < res.length; i++){
-							if(res[i] == "1")
+							if(res[i] == "0")
 								arr += (i+1).toString() + " ";
-							else if(res[i] > 1)
+							else if(res[i] == "1")
+								bt = true;
+							else
 								status = false;
 						}
-						if(arr.length == 0 && status){
+						if(status && !bt){
 							alert("Все прошло успешно!");
 							removeAll();
 						}
@@ -404,9 +407,13 @@ modules["seller-answer-module"] = (function(){
 							alert("Прозошла ошибка будет обнавлена страница!")
 							document.location.reload();
 						}
-						else if(status && arr.length > 0){
+						else if(status && bt){
 							alert("На запчасти по номеру " + arr + "не хватает баланса!");
 							removePartial(arr);
+						}
+						else{
+							alert("Прозошла ошибка будет обнавлена страница!")
+							document.location.reload();
 						}
 					}
 				});
@@ -439,16 +446,27 @@ modules["seller-answer-module"] = (function(){
 	//private functions
 	function removeAll(){
 		if(btn.current){
-			//not good()
+			//remove the div from html!
 			btn.current.parent().parent().parent().remove();
+			$("#js-seller-answer-counter")
+			.html(parseInt($("#js-seller-answer-counter").html())-1);
 		}else{
 			throw "Some error in code! Check it!";
 		}
+		//close modal
+		T_SANDBOX.MODULES.modal.close();
 	}
 	function removePartial(arr){
+		var dt = [];
 		for(var i = 0; i < arr.length; i++){
-
+			dt.push(
+				btn.current.find(".hide").eq(i)
+			);
 		}
+		for(var i = 0; i < dt.length; i++)
+			dt[i].remove();
+		//close modal
+		T_SANDBOX.MODULES.modal.close();
 	}
 });
 

@@ -47,7 +47,32 @@
 								if($this->session->userdata("type") == "seller" && !(isset($bool))){
 							?>	
 							<!--seller place-->
-
+							<div class="inline">
+								<a class="dropdown-open pointer"><i class="icon-h-sign pad-right"></i>Как пользоваться?</a>
+								<ul class="dropdown-menu dropdown-menu-help" style="display: none;">
+									<li class="dropdown-caret">
+					               		 <span class="caret-outer"></span>
+					               	 	 <span class="caret-inner"></span>
+					            	</li>
+					            	<li>
+				            			<a class="bold pointer" id="js-module-modal" data-target="js-modal-seller-help">
+				            				<i class="icon-group pad-right"></i>Общая справка
+					            		</a>
+					            	</li>
+					            	<li class="dropdown-divider"></li>
+				            		<li>
+				            			<a class="pointer" id="js-module-modal" data-target="js-modal-seller-help-find">
+				            				<i class="icon-edit pad-right"></i>Как искать
+					            		</a>
+					            	</li>
+					            	<li>
+										<a class="pointer">
+											<i class="icon-certificate pad-right"></i>Настройки
+										</a>
+									</li>
+					            	<li class="dropdown-divider"></li>
+								</ul>
+							</div>
 							<!--end of seller place-->
 							<?php	
 								}

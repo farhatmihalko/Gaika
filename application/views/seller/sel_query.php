@@ -8,9 +8,13 @@
 				<i class="icon-pushpin pad-right"></i>Искать запчасти
 			</button>
 			<div class="right">
-				<button class="submenu-a" id="js-module-modal" data-target="js-modal-seller-help-find">
-					<i class="icon-cog pad-right"></i>Как искать?
-				</button>
+				<a class="breadcum pointer inline a_type margin-right a_type_cat">
+					Ваш баланс : 
+					<?php
+						echo $this->session->userdata('money');
+					?>
+					<i class="icon-money pad-left"></i>
+				</a>
 			</div>
 		</div>
 		<div class="twelve columns adv-line font-gray-bold  align-center adv-list-bordered">
@@ -118,7 +122,10 @@
 			<span class="breadcum">
 			 Поиск нашел вам 
 			 <h4 class="inline">
-			  <?php echo count($res);?> обьявлений
+			  <span id="js-seller-answer-counter">
+			  	<?php echo count($res);?>
+			  </span>
+			  обьявлений
 			</h4>
 			<br>
 			Текущая страница <h4 class="inline">1</h4>
