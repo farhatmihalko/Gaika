@@ -772,6 +772,41 @@ class Main extends CI_Controller {
 
 		$this->load->view('header',$style);
 		$this->load->view('add_news_view',$data);
+		$this->load->view('footer');
+	}
+
+	private function send_invite(){
+		$header_ ='MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n"; 	
+		$user = $this->main_model->get_user_by_id($this->session->userdata('id'));
+		$mail = $_POST['mail'];
+		$text = 'Здравствуйте, наш пользователь с е-мэйлом '.$user->mail.' приглашает Вас воспользоваться нашим сервисом.
+Для регистрации, пройдите по ссылке http://gaika.kz/index.php/main/reg_user
+Для получения информации о нашем сервисе, пройдите по ссылке http://gaika.kz/index.php/main/about';
+		mail($mail,'=?UTF-8?B?'.base64_encode('Приглашение на gaika.kz от '.$user->mail).'?=',$text,$header_);
+		}
+	
+
+	public function invite_friend(){
+		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+
+		$this->form_validation->set_rules('mail','E-mail вашего друга','required');
+
+		if ($this->form_validation->run()){
+			$this->send_invite();
+			redirect('main/invite_success');
+		}
+
+		$this->load->view('header',$style);
+		$this->load->view('invite_friend_view');
+		$this->load->view('footer');
+	}
+
+	public function invite_success(){
+		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+
+		$this->load->view('header',$style);
+		$this->load->view('invite_success_view');
+		$this->load->view('footer');
 	}
 }
 ?>
