@@ -128,7 +128,7 @@ modules["modal-window-module"] = function(){
 		opened.length = 0;
 	}
 	//add to sandbox functionality and module
-	T_SANDBOX.addModule("modal-window-close", {
+	T_SANDBOX.addModule("modal", {
 		close : function(){
 			closeModal();
 		},

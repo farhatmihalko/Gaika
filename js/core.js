@@ -69,6 +69,12 @@ var q8 = (function(){
 				console.log("Hi this is sandbox");
 			else
 				alert("Hi this is sandbox");
+		},
+		addModule : addModule,
+		removeModule : removeModule,
+		//here we store modules
+		MODULES : {
+			//modules definition
 		}
 	}
 
@@ -77,12 +83,11 @@ var q8 = (function(){
 	//private functions
 	function addModule(T_NAME, module){
 		if(module && T_NAME)
-			T_OBJECT[T_NAME] = module;
-		alert()
+			T_OBJECT.MODULES[T_NAME] = module;
 	}
 	function removeModule(T_NAME){
-		if(T_OBJECT[T_NAME]){
-			T_OBJECT[T_NAME] = null;
+		if(T_OBJECT.MODULES[T_NAME]){
+			T_OBJECT.MODULES[T_NAME] = null;
 		}
 	}
 });
@@ -90,11 +95,12 @@ var q8 = (function(){
 self.core = v8();
 v8 = null;
 //end of creation
+
+//adding sandbox
 self.T_SANDBOX = q8();
 q8 = null;
-//adding sandbox
-self.sandbox = 
-//end
+//end of sandbox
+
 $(document).ready(function(){
 	$("#drop-down-open").DropDown();
 	$(".header-city").find("li").each(function(){
