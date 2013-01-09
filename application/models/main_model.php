@@ -105,36 +105,6 @@ class Main_model extends CI_Model {
 		return $data->result();
 	}
 
-	/*function get_adverts(){
-		$this->db->limit(30);
-		$this->db->order_by('date');
-		if (func_num_args()==1)
-			$this->db->where('category',func_get_arg(0));
-		$data = $this->db->get('adverts');
-		return $data->result();
-	}*/
-
-	function get_adverts(){
-		$this->db->limit(30);
-		$this->db->order_by('date');
-		$this->db->where('category',$_POST['category']);
-		$data = $this->db->get('adverts');
-		return $data->result();
-	}
-
-	function add_advert($title,$text,$img,$category){
-		$data = array(	
-				'owner_id' => $this->session->userdata('id'),
-				'title' => $title,
-				'text' => $title,
-				'img' => $img,
-				'category' => $category,
-				'date' => date("Y:m:d:H:i"),
-				'active' => FALSE
-				);
-		$this->db->insert('adverts',$data);
-	}
-
 	function insert_file($name,$fake){
 		$data = array(
 					'real'=>$name,
