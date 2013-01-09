@@ -64,11 +64,11 @@
 											</div>
 											<input class="hide"	name="query_id[<?php echo $counter;?>]" 
 											value="<?php echo $obj->id;?>"/>
-											<div class="five columns">
+											<div class="three columns">
 												<input type="text" name="price[<?php echo $counter;?>]"/>
 											</div>
-											<div class="five columns">
-												<textarea class="min-height-none" name="comment[<?php echo $counter;?>]"></textarea>
+											<div class="seven columns">
+												<input type="text" class="min-height-none" name="comment[<?php echo $counter;?>]">
 											</div>
 										</div>
 									</div>
@@ -148,17 +148,17 @@
 				<div class="two columns">
 					Название запчасти
 				</div>
-				<div class="five columns">
+				<div class="three columns">
 					Цена
 				</div>
-				<div class="five columns">
+				<div class="seven columns">
 					Комментарий
 				</div>
 			</div>
 			<form method="POST" id="js-seller-give-answer" data-url="<?php
 				echo base_url("index.php/main/add_answer");
 			?>">
-				<div class="twelve columns line-before pad-bottom min-height-300">
+				<div class="twelve columns line-before min-height-300">
 					<div id="js-seller-place">
 					</div>
 				</div>
