@@ -378,13 +378,20 @@ modules["seller-answer-module"] = (function(){
 					data : data,
 					type : "POST",
 					success : function(res){
-						if(res == 0){
-							alert("Все прошло успешно!");
-						}else if(res == 1){
-							alert("У вас недостаточно денег на счете. Пополните баланс!");
-						}else{
-							alert("Ошибочка!");
+						var arr = "";
+						var status = true;
+						for(var i = 0; i < res.length; i++){
+							if(res[i] == "1")
+								arr += (i+1).toString() + " ";
+							else if(res[i] > 1)
+								status = false;
 						}
+						if(arr.length == 0 && status)
+							alert("Все прошло успешно!");
+						else if(status == false)
+							alert("Прозошла ошибка обновите страницу!")
+						else if(status && arr.length > 0)
+							alert("На запчасти по номеру " + arr + "не хватает баланса!");
 					}
 				});
 				return false;
@@ -414,7 +421,7 @@ modules["seller-answer-module"] = (function(){
 
 	//private functions
 	function remove(){
-		
+
 	}
 });
 
