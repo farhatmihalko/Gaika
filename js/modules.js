@@ -354,6 +354,43 @@ modules["about-site-tab-module"] = (function(){
 		worker : worker
 	}
 });
+//seller => modules
+modules["seller-answer-module"] = (function(){
+	var btn = {
+		get : function(){
+			return $(".js-seller-answer");
+		}
+	}
+	var place = {
+		set : function(html){
+			this.get().html(html);
+		},
+		get : function(){
+			return $("#js-seller-place");
+		}
+	}
+	var init = function(){
+		btn.get().each(function(){
+			$(this).live("click", function(){
+				var cont = $(this).find("#answer-content");
+				worker(cont);
+			});
+		});
+	}
+	var worker = function(content){
+		place.set("");
+		content.find(".hide").each(function(){
+			place.get().append($(this).html());
+		});
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+
+	//private functions
+});
+
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!

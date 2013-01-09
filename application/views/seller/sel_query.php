@@ -41,16 +41,38 @@
 				<div class="two columns align-center">
 					<span class="breadcum adv-time"><?php echo $dates[$key];?></span>
 					<div class="breadcum pad-top adv-add-btn">
-						<button class="btn btn-green button line-before">
+						<button class="btn btn-green button line-before js-seller-answer" 
+						id="js-module-modal" data-target="js-modal-seller-give-answer">
 							<i class="icon-star"></i>
 							&nbsp;Ответить
-							<?php
-								foreach ($value as $obj) {
-							?>
-							<div class="hide" data-attr="<?php echo $obj->id;?>" part="<?php echo $obj->part;?>"></div>
-							<?php
-								}
-							?>
+							<div id="answer-content">
+								<?php
+									$counter = 0;
+									foreach ($value as $obj) {
+								?>
+									<div class="hide">
+										<div class="twelve columns line-after field <?php
+											if($counter%2 == 0)
+												echo "color-b-254";
+										?>">
+											<div class="two columns">
+												<a class="pointer custom_href"><?php echo $obj->part;?></a>
+											</div>
+											<input class="hide"	name="query_id[<?php echo $counter;?>]" 
+											value="<?php echo $obj->id;?>"/>
+											<div class="five columns">
+												<input type="text" name="price[<?php echo $counter;?>]"/>
+											</div>
+											<div class="five columns">
+												<textarea class="min-height-none" name="comment[<?php echo $counter;?>]"></textarea>
+											</div>
+										</div>
+									</div>
+								<?php
+										$counter++;
+									}
+								?>
+							</div>
 						</button>
 					</div>
 				</div>
@@ -105,4 +127,29 @@
 		<!--end of information-->
 	</div>
 	<!--end content-->
+</div>
+
+<div>
+	<div class="row">
+		<!--form to help-->
+		<div class="modal-window shadow eight columns centered offset-by-two hide js-scroll-big" id="js-modal-seller-give-answer">
+			<div class="close-button"></div>
+			<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Ответ</h4>
+			<hr class="hr-dashed">
+			<div class="twelve columns line-before pad-bottom min-height-300">
+				<form method="POST" id="js-seller-give-answer">
+					<div id="js-seller-place">
+						
+					</div>
+				</form>
+			</div>
+			<div class="twelve columns">
+				<button class="btn btn-green button block">
+					<i class="icon-download-alt pad-right"></i>
+					Ответить
+				</button>
+			</div>
+		</div>
+		<!--end of form-->
+	</div>
 </div>

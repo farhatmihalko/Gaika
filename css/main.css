@@ -351,6 +351,11 @@ ul{
 	border-bottom : 1px dashed #ddd;
 	margin : 3px 0px;
 }
+.custom_href{
+	color : gray;
+	font-size : 12px;
+	font-weight: bold;
+}
 
 /*end of seller*/
 
