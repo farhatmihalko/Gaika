@@ -60,11 +60,41 @@ var v8 = (function(){
 	}
 });
 
+var q8 = (function(){
+	
+	var T_OBJECT = {
+		//store modules
+		print : function(){
+			if(window.console)
+				console.log("Hi this is sandbox");
+			else
+				alert("Hi this is sandbox");
+		}
+	}
+
+	return T_OBJECT;
+
+	//private functions
+	function addModule(T_NAME, module){
+		if(module && T_NAME)
+			T_OBJECT[T_NAME] = module;
+		alert()
+	}
+	function removeModule(T_NAME){
+		if(T_OBJECT[T_NAME]){
+			T_OBJECT[T_NAME] = null;
+		}
+	}
+});
 //creation core
 self.core = v8();
 v8 = null;
 //end of creation
-
+self.T_SANDBOX = q8();
+q8 = null;
+//adding sandbox
+self.sandbox = 
+//end
 $(document).ready(function(){
 	$("#drop-down-open").DropDown();
 	$(".header-city").find("li").each(function(){

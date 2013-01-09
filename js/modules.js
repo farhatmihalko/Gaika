@@ -127,6 +127,15 @@ modules["modal-window-module"] = function(){
 		}
 		opened.length = 0;
 	}
+	//add to sandbox functionality and module
+	T_SANDBOX.addModule("modal-window-close", {
+		close : function(){
+			closeModal();
+		},
+		getOpened : function(){
+			return opened;
+		}
+	});
 }
 
 
@@ -359,7 +368,8 @@ modules["seller-answer-module"] = (function(){
 	var btn = {
 		get : function(){
 			return $(".js-seller-answer");
-		}
+		},
+		current : null
 	}
 	var place = {
 		set : function(html){
@@ -386,12 +396,18 @@ modules["seller-answer-module"] = (function(){
 							else if(res[i] > 1)
 								status = false;
 						}
-						if(arr.length == 0 && status)
+						if(arr.length == 0 && status){
 							alert("Все прошло успешно!");
-						else if(status == false)
-							alert("Прозошла ошибка обновите страницу!")
-						else if(status && arr.length > 0)
+							removeAll();
+						}
+						else if(status == false){
+							alert("Прозошла ошибка будет обнавлена страница!")
+							document.location.reload();
+						}
+						else if(status && arr.length > 0){
 							alert("На запчасти по номеру " + arr + "не хватает баланса!");
+							removePartial(arr);
+						}
 					}
 				});
 				return false;
@@ -401,6 +417,7 @@ modules["seller-answer-module"] = (function(){
 	var init = function(){
 		btn.get().each(function(){
 			$(this).live("click", function(){
+				btn.current = $(this);
 				var cont = $(this).find("#answer-content");
 				worker(cont);
 			});
@@ -420,8 +437,18 @@ modules["seller-answer-module"] = (function(){
 	}
 
 	//private functions
-	function remove(){
+	function removeAll(){
+		if(btn.current){
+			//not good()
+			btn.current.parent().parent().parent().remove();
+		}else{
+			throw "Some error in code! Check it!";
+		}
+	}
+	function removePartial(arr){
+		for(var i = 0; i < arr.length; i++){
 
+		}
 	}
 });
 
