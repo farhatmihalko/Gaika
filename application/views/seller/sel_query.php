@@ -155,8 +155,9 @@
 					<div id="js-seller-place">
 					</div>
 				</div>
+				<hr class="hr-dashed">
 				<div class="twelve columns">
-					<button class="btn btn-green button block">
+					<button class="btn btn-green button block center">
 						<i class="icon-download-alt pad-right"></i>
 						Ответить
 					</button>
