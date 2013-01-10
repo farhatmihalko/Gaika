@@ -89,12 +89,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="ten columns hide right" id="js-s-more-view">
+					<div class="ten columns hide color-o-l right font-size-13" id="js-s-more-view">
 						<?php
+							$list_numeration = 0;
 							foreach($value['sellers'] as $row){
+								$list_numeration++;
 								$path = base_url("index.php/main/view_seller_answers/".$key."/"."".$row->seller_id);
 						?>
-							<div class="twelve columns color-o-l right field">
+							<div class="twelve columns right field">
+								<?php
+									echo $list_numeration.") ";
+								?>
 								<span>
 									Компания 
 									<a href="<?php echo $path?>" class="bold font-color-b-l">
