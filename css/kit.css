@@ -180,3 +180,7 @@
 .min-height-none{
 	min-height: 0;
 }
+
+.border-right-6px{
+	border-right: 6px solid gray;
+}

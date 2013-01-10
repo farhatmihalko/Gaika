@@ -89,7 +89,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="ten columns hide color-o-l right font-size-13" id="js-s-more-view">
+					<div class="ten columns hide color-o-l right font-size-13 border-right-6px" id="js-s-more-view">
 						<?php
 							$list_numeration = 0;
 							foreach($value['sellers'] as $row){
