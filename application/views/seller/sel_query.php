@@ -33,7 +33,7 @@
 		</div>
 		<!--end of table information-->
 
-		<div class="result-list-content">
+		<div class="result-list-content min-height-400">
 		<!--starting adv-->
 			<?php 
 				$counter_big = 1;

@@ -470,6 +470,39 @@ modules["seller-answer-module"] = (function(){
 	}
 });
 
+modules["seller-view-module"] = (function(){
+	var btn_more = {
+		get : function(){
+			return $("#js-seller-answer-more");
+		}
+	}
+	var init = function(){
+		btn_more.get().live("click", function(){
+			var those = $(this);
+			var need = $(this).parent().parent().parent().parent().find("#js-s-more-view");
+			if(need.hasClass("hide")){
+				need.fadeIn("fast")
+				.removeClass("hide");
+				those.html(those.html().toString()
+					.replace("Посмотреть ответы", "Скрыть ответы"));
+			}
+			else{
+				need.fadeOut("fast")
+				.addClass("hide");
+				those.html(those.html().toString()
+					.replace("Скрыть ответы", "Посмотреть ответы"));
+			}
+		});
+	}
+	var worker = function(){
+
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+	//private
+});
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!

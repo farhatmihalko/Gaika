@@ -35,53 +35,87 @@
 			<?php
 				foreach($info as $key=>$value){
 			?>
-			<div class="twelve columns adv-line hr-dashed">
-				<div class="two columns align-center">
-					<span class="breadcum adv-time">
-						<?php
-							echo $value["query_date"]->query_date;
-						?>
-					</span>
-				</div>
-				<div class="four columns">
-					<a class="line-after block pointer">
-						Запчасти на : 
-						<?php
-							echo $value["car"].", ".$value["year"]." года";
-						?>
-					</a>
-					<span class="breadcum">
-						Vin-Code : 
-						<?php 
-							echo $key;
-						?>
-					</span>
-					<span class="breadcum">
-						Город : 
-						<?php
-							echo $value["query_date"]->city;
-						?>
-					</span>
-				</div>
-				<div class="two columns align-center">
-					<a class="pointer">
-						<?php 
-							echo count($value['sellers']);
-						?>
-						<span class="breadcum"> ответило</span>
-					</a>
-				</div>
-				<div class="three columns">
-					<div class="adv-add-btn">
-						<a class="btn_metro font-size-13">
-							<i class="icon-trash pad-right"></i> Удалить
-						</a>
-						<a class="btn_metro font-size-13 metro_mr-4">
-							<i class="icon-star pad-right"></i> Посмотреть
-						</a>
+				<div id="js-answers-parent">
+					<div class="twelve columns adv-line end">
+						<div class="two columns align-center">
+							<span class="breadcum adv-time">
+								<?php
+									echo $value["query_date"]->query_date;
+								?>
+							</span>
+						</div>
+						<div class="four columns">
+							<a class="line-after block pointer">
+								Запчасти на : 
+								<?php
+									echo $value["car"].", ".$value["year"]." года";
+								?>
+							</a>
+							<span class="breadcum">
+								Vin-Code : 
+								<?php 
+									echo $key;
+								?>
+							</span>
+							<span class="breadcum">
+								Город : 
+								<?php
+									echo $value["query_date"]->city;
+								?>
+							</span>
+						</div>
+						<div class="two columns align-center">
+							<a class="pointer">
+								<?php 
+									echo count($value['sellers']);
+								?>
+								<span class="breadcum"> ответило</span>
+							</a>
+						</div>
+						<div class="three columns">
+							<div class="adv-add-btn">
+								<a class="btn_metro font-size-13">
+									<i class="icon-trash pad-right"></i> Удалить запрос
+								</a>
+								<?php
+									if(count($value["sellers"])){
+								?>
+									<a class="btn_metro font-size-13 metro_mr-4" id="js-seller-answer-more">
+										<i class="icon-star pad-right"></i> Посмотреть ответы
+									</a>
+								<?php
+									}
+								?>
+							</div>
+						</div>
 					</div>
+					<div class="ten columns hide right" id="js-s-more-view">
+						<?php
+							foreach($value['sellers'] as $row){
+								$path = base_url("index.php/main/view_seller_answers/".$key."/"."".$row->seller_id);
+						?>
+							<div class="twelve columns color-b-252 right field">
+								<span>
+									Компания 
+									<a href="<?php echo $path?>" class="bold">
+										<?php echo $row->seller_name;?>
+									</a>
+									предлагает вам
+									<?php
+									 echo $row->parts_val.' запчастей за '.$row->overall;
+									?>
+									тенге 
+									<span class="breadcum inline bold">  
+										, <a href="<?php echo $path;?>">подробнее</a>
+									</span>
+								</span>
+							</div>
+						<?php
+							}
+						?>
+					</div>
+					<hr class="hr-dashed">
 				</div>
-			</div>
 			<?php
 				}
 			?>
