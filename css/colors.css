@@ -1,4 +1,7 @@
 /*background colors*/
+.color-o-l{
+	background: #FCFBED;
+}
 .color-b-252{
 	background : rgb(237, 237, 252);
 }
@@ -40,4 +43,7 @@
 }
 .font-color-r{
 	color : #DD1E0D;;
+}
+.font-color-b-l{
+	color : #4E4E4E;
 }

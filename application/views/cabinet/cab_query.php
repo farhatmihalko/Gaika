@@ -94,10 +94,10 @@
 							foreach($value['sellers'] as $row){
 								$path = base_url("index.php/main/view_seller_answers/".$key."/"."".$row->seller_id);
 						?>
-							<div class="twelve columns color-b-252 right field">
+							<div class="twelve columns color-o-l right field">
 								<span>
 									Компания 
-									<a href="<?php echo $path?>" class="bold">
+									<a href="<?php echo $path?>" class="bold font-color-b-l">
 										<?php echo $row->seller_name;?>
 									</a>
 									предлагает вам
@@ -106,7 +106,7 @@
 									?>
 									тенге 
 									<span class="breadcum inline bold">  
-										, <a href="<?php echo $path;?>">подробнее</a>
+										, <a href="<?php echo $path;?>" class="font-color-b-l">посмотреть подробнее.</a>
 									</span>
 								</span>
 							</div>
