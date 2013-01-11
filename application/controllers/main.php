@@ -535,8 +535,10 @@ class Main extends CI_Controller {
 			$part_names = $_POST['part_name'];
 		if (isset($_POST['part_cat']))
 			$part_cats = $_POST['part_cat'];
-		if (!$this->vincode_check())
+		if (!$this->vincode_check()){
+			echo '2';
 			return;
+		}
 		$ans = '';
 		$num = count($part_names);
 		$bo = true;
