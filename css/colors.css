@@ -32,6 +32,9 @@
 .color-b-l{
 	background: #FCFCFC;
 }
+.color-r-removed{
+	background: rgba(255, 244, 244, 1.0);
+}
 /*border colors*/
 .border-color-g253{
 	border : 1px dashed #CDE4C0;

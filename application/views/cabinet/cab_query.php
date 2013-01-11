@@ -21,13 +21,13 @@
 				<div class="two columns">
 					Дата
 				</div>
-				<div class="two columns">
+				<div class="four columns">
 					Запрос
 				</div>
-				<div class="six columns">
+				<div class="two columns">
 					Ответов
 				</div>
-				<div class="two columns">
+				<div class="three columns align-initial">
 					Действия
 				</div>
 			</div>
@@ -74,7 +74,8 @@
 						</div>
 						<div class="three columns">
 							<div class="adv-add-btn">
-								<a class="btn_metro font-size-13">
+								<a class="btn_metro font-size-13" id="js-action-button" data-id="<?php echo $key;?>"
+								data-url="<?php echo base_url('index.php/main/accept_answer');?>" data-type="js-list">
 									<i class="icon-trash pad-right"></i> Удалить запрос
 								</a>
 								<?php
@@ -167,7 +168,7 @@
 					</div>
 					<div class="three columns adv-add-btn">
 						<a class="btn_metro font-size-50" id="js-action-button" data-id="<?php echo $key;?>"
-						data-url="<?php echo base_url('index.php/main/accept_answer');?>">
+						data-url="<?php echo base_url('index.php/main/accept_answer');?>" data-type="js-table">
 							<i class="icon-trash"></i>
 						</a>
 					</div>

@@ -184,3 +184,7 @@
 .border-right-6px{
 	border-right: 6px solid gray;
 }
+
+.pad-15-10{
+	padding: 15px 10px;
+}

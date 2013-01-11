@@ -261,12 +261,8 @@ modules["buttons-action-module"] = (function(){
 		}
 	}
 	var init = function(){
-		data.active().each(function(){
-			$(this).live("click", function(){
-				worker($(this), function(){
-					alert("Good");
-				});
-			});
+		data.active().live("click", function(){
+			worker($(this));
 		});
 	}
 	var worker = function(object, s){
@@ -274,14 +270,33 @@ modules["buttons-action-module"] = (function(){
 			throw "Callback must be initialized";
 		}
 		var dataId = object.attr("data-id") || "0";
-		var dataUrl = "1";//object.attr("data-url") || "empty";
+		var dataUrl = object.attr("data-url") || "1";
+		var dataType = object.attr("data-type");
 		$.ajax({
 			type : "POST",
 			url : dataUrl,
 			data : {
 				id : dataId
 			},
-			success : s
+			success : function(){
+				if(dataType == "js-list"){
+					object
+					.parent().parent()
+					.parent().removeClass("adv-line").addClass("pad-15-10")
+					.parent().addClass("color-r-removed");
+					object.hide();
+					object.parent().parent()
+					.html("<span class='bold font-size-12'>Удалено</span>");
+				}
+				else if(dataType == "js-table"){
+					object
+					.parent().parent().removeClass("adv-line").addClass("pad-15-10")
+					.removeClass("hover-white").addClass("color-r-removed")
+					object.hide();
+				}
+				else
+					alert("Все прошло успешно!");
+			}
 		});
 	}
 	return {
