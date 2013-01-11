@@ -1,6 +1,6 @@
 <?php 
 
-class Admin_model extends CI_Model {
+class Gaika_admin_model extends CI_Model {
 	function get_admins($login){
 		$this->db->where('login',$login);
 		return $this->db->get('admins')->result();
@@ -14,8 +14,11 @@ class Admin_model extends CI_Model {
 		$this->db->insert('admins',$arr);
 	}*/
 
-	function add_model($seller,$money){
-		$query = "UPDATE sellers SET money=money+".$money." WHERE id='".$seller."'";
+	function add_money(){	
+		$query = "UPDATE sellers SET money=money+".$_POST['amount']." WHERE id='".$_POST['seller']."'";
 		$this->db->query($query);
+		return;
 	}
 }
+
+?>

@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('main_model','admin_model');
+$autoload['model'] = array('main_model','gaika_admin_model');
 
 
 /* End of file autoload.php */

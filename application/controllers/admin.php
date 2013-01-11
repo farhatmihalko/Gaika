@@ -60,7 +60,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function add_money(){
-		$this->admin_model->add_money($this->input->post('seller'),$this->input->post('amount'));
+		$this->gaika_admin_model->add_money();
 	}
 }
 ?>

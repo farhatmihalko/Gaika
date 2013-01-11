@@ -105,13 +105,6 @@ class Main_model extends CI_Model {
 		return $data->result();
 	}
 
-	function insert_file($name,$fake){
-		$data = array(
-					'real'=>$name,
-					'fake'=>$fake);
-		$this->db->insert('images',$data);
-	}
-
 	function get_file_name($fake){
 		$this->db->where('fake',$fake);
 		$file = $this->db->get('images')->result();
