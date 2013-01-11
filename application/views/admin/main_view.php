@@ -1,56 +1,152 @@
 <body>
-	<p>Всего пользователей - <?php echo count($users)+count($sellers);?>
-	<p>Из них покупателей - <?php echo count($users);?>
-	<p>Продавцов<?php echo count($sellers);?>
-	<h1> Покупатели </h1>
-	<table>
-		<thead>
-			<th>e-mail</th>
-			<th>Имя</th>
-			<th>Телефон</th>
-			<th>Город</th>
-		</thead>
-		<tbody>
-			<?php foreach ($users as $obj) {
-				echo '<tr>';
-				echo '<td>'.$obj->mail.'</td>';
-				echo '<td>'.$obj->name.'</td>';
-				echo '<td>'.$obj->phone.'</td>';
-				echo '<td>'.$obj->city.'</td>';
-				echo '</tr>';
-			}?>
-		</tbody>
-	</table>
+	<div class="page">
+		<div class="row shadow pad-tb">
+			<div class="twelve columns line-after">
+				<span class="breadcum">
+					Всего пользователей - 
+					<?php 
+						echo count($users) + count($sellers);
+					?>
+				</span>
+				<span class="breadcum">
+					Пользователей - 
+					<?php
+						echo count($users);
+					?>
+				</span>
+				<span class="breadcum">
+					Продавцов - 
+					<?php
+						echo count($sellers);
+					?>
+				</span>
+				<hr class="hr-dashed">
+			</div>
+			
+			<div class="twelve columns">
+				<ul class="about_list pad-left-big" id="js-admin-menu">
+					<li class="active">
+						<a data-id="js-admin-view-users" id="js-admin-users">Пользователи</a>
+					</li>
+					<li>
+						<a data-id="js-admin-view-sellers" id="js-admin-sellers">Продавцы</a>
+					</li>
+				</ul>
+			</div>
 
-	<h1> Продавцы </h1>
-	<table border="1" cellspacing="2" width="800px">
-		<thead>
-			<th>Логин</th>
-			<th>Название компании</th>
-			<th>Количество денег на счету</th>
-			<th>Номер телефона</th>
-			<th>Адрес</th>
-			<th>Город</th>
-			<th>Пополнение баланса</th>
-		</thead>
-		<tbody>
-			<?php foreach ($sellers as $obj) {
-				echo '<tr>';
-				echo '<td>'.$obj->login.'</td>';
-				echo '<td>'.$obj->company_name.'</td>';
-				echo '<td>'.$obj->money.'</td>';
-				echo '<td>'.$obj->phone1.'</td>';
-				echo '<td>'.$obj->adress.'</td>';
-				echo '<td>'.$obj->city.'</td>';
-				echo '<td>';
-				echo  form_open('admin/add_money').'
-						<input name="seller" type="text" value='.$obj->id.' hidden/>
-						<input name="amount" type="number"/>
-						<input type="submit" value="Пополнить"/>
-						</form>';
-				echo '</td></tr>';
-			}?>
-		</tbody>
-	</table>
+			<div class="line-before twelve columns" id="js-admin-view-users">
+				<div class="twelve columns adv-line font-gray-bold">
+					<div class="three columns">
+						Email
+					</div>
+					<div class="three columns">
+						Имя пользователя
+					</div>
+					<div class="three columns">
+						Телефон
+					</div>
+					<div class="three columns">
+						Город
+					</div>
+				</div>
+
+				<?php 
+					foreach ($users as $obj){
+				?>
+				<div class="twelve columns adv-line hr-dashed">
+					<div class="three columns">
+						<?php echo $obj->mail; ?>
+					</div>
+					<div class="three columns">
+						<?php echo $obj->name; ?>
+					</div>
+					<div class="three columns">
+						<?php echo $obj->phone; ?>
+					</div>
+					<div class="three columns">
+						<?php echo $obj->city; ?>
+					</div>
+				</div>
+				<?php
+					}
+				?>
+			</div>
+
+			<div class="line-before twelve columns hide" id="js-admin-view-sellers">
+				
+				<div class="twelve columns adv-line font-gray-bold">
+					<div class="three columns">
+						Логин
+					</div>
+					<div class="three columns">
+						Имя компании
+					</div>
+					<div class="three columns">
+						Информация
+					</div>
+					<div class="three columns">
+						Баланс
+					</div>
+				</div>
+				<?php 
+					foreach ($sellers as $obj){
+				?>
+				<div class="twelve columns adv-line hr-dashed">
+					<div class="three columns">
+						<?php echo $obj->login; ?>
+					</div>
+					<div class="three columns">
+						<?php echo $obj->company_name; ?>
+					</div>
+					<div class="three columns">
+						<span class="breadcum font-size-11 bold">
+							Телефон : 
+							<?php
+								echo $obj->phone1;
+							?>
+						</span>
+						<span class="breadcum font-size-11 bold">
+							Адресс : 
+							<?php
+								echo $obj->adress;
+							?>
+						</span>
+						<span class="breadcum font-size-11 bold">
+							Город : 
+							<?php
+								echo $obj->city;
+							?>
+						</span>
+					</div>
+					<div class="three columns">
+						<span class="breadcum bold font-size-11">
+							Баланс : 
+							<?php
+								echo $obj->money;
+							?>
+						</span>
+						<a class="pointer" id="js-add-money-open">
+							Пополнить
+						</a>
+						<div class="hide" id="js-add-money-form">
+							<?php echo  form_open("admin/add_money"); ?>
+								<input name="seller" type="hidden" value="<?php echo $obj->id; ?>">
+								<input name="amount" type="text" class="line-after">
+								<button class="btn btn-green button">
+									Пополнить
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<?php
+					}
+				?>
+			</div>
+		</div>
+	</div>
 </body>
-</html>
+
+<script type="javascript">
+	
+</script>
