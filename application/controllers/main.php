@@ -645,20 +645,24 @@ class Main extends CI_Controller {
 	}
 
 	public function accept_answer(){
-		if ($this->session->userdata('type')!='seller')
+		if ($this->session->userdata('type')!='user')
 			redirect('main');
 		$vin = $_POST['id'];
 		$car = $this->main_model->get_queries_by_vin($vin);
+		$bool = 0;
 		foreach ($car as $obj) {
-			$this->delete_query($obj->id);
+			if (!$this->delete_query($obj->id))
+				$bool = 1;
 		}
+		echo $bool;
 	}
 
 	public function delete_query($id){
-		if ($this->session->userdata('type')!='seller')
+		if ($this->session->userdata('type')!='user')
 			redirect('main');
-		$this->main_model->delete_query($id);
-		$this->main_model->delete_related_answers($id);
+		$b1 = $this->main_model->delete_query($id);
+		$b2 = $this->main_model->delete_related_answers($id);
+		return $b1&$b2;
 	}
 
 	public function delete_answer(){
