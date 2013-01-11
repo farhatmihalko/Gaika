@@ -85,17 +85,11 @@
 				            				<i class="icon-group pad-right"></i>Общая справка
 					            		</a>
 					            	</li>
-					            	<li class="dropdown-divider"></li>
 				            		<li>
 				            			<a class="pointer" id="js-module-modal" data-target="js-modal-user-help-query">
 				            				<i class="icon-edit pad-right"></i>Как подавать заявку
 					            		</a>
 					            	</li>
-					            	<li>
-										<a class="pointer" id="js-module-modal" data-target="js-modal-user-settings">
-											<i class="icon-certificate pad-right"></i>Настройки
-										</a>
-									</li>
 					            	<li class="dropdown-divider"></li>
 								</ul>
 							</div>
@@ -238,7 +232,7 @@
 	?>
 		<!--help for seller-->
 		<div class="row">
-		<!--Helps-->
+			<!--Helps-->
 			<div class="modal-window shadow six columns centered offset-by-three hide" id="js-modal-seller-help">
 				<div class="close-button"></div>
 				<h4 class="line-after font-color-l-blue"><i class="icon-bookmark pad-right"></i>Помощь по нашему сервису</h4>
@@ -269,9 +263,8 @@
 			</div>
 			<!--fix-->
 
-			<div class="row">
 			<!--form to help-->
-				<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-seller-help-find">
+			<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-seller-help-find">
 					<div class="close-button"></div>
 					<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Как искать запчасти?</h4>
 					<hr class="hr-dashed">
@@ -300,9 +293,8 @@
 						</div>
 					</div>
 					<hr class="hr-dashed">
-				</div>
-			<!--end of form-->
 			</div>
+			<!--end of form-->
 
 		<!--end of help-->
 		</div>
@@ -329,7 +321,39 @@
 						<br>
 						3. Пройдя по ссылке <a class="pointer">"мои заявки"</a> вы сможете просмотреть свои заявки
 					</p>	
+			</div>	
+
+			<!--form to help-->
+			<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-user-help-query">
+				<div class="close-button"></div>
+				<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Как подавать заявку?</h4>
+				<hr class="hr-dashed">
+				<div class="twelve columns line-after line-before pad-bottom">
+					<div class="group-line pad">
+						<p>
+							Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Подать зявку</a>
+						</p>
+						<img src="<?php echo base_url('images/user/query-help.png');?>" alt="">
+					</div>
+					<div class="group-line pad">
+						<p>
+							После нажатия этой кнопки перед вами появится 
+							<a class="breadcum inline bold">окно</a>
+							с возможностью выбора параметров для подачи запроса
+						</p>
+						<img src="<?php echo base_url('images/user/query-help2.png');?>" alt="">
+					</div>
+					<div class="group-line pad">
+						<p>
+							Также вы можете добовлять дополнительные запчасти
+						</p>
+						<img src="<?php echo base_url('images/user/query-help3.png');?>" alt="">
+					</div>
+				</div>
+				<hr class="hr-dashed">
 			</div>
+			<!--end of form-->
+
 		<!--end of help-->
 		</div>
 		<!--end of help for user-->

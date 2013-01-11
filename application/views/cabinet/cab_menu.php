@@ -123,39 +123,6 @@
 		</div>
 		<!--end of pattern-->
 	</div>
-
-	<div class="row">
-		<!--form to help-->
-		<div class="modal-window shadow six columns centered offset-by-three hide js-scroll-big" id="js-modal-user-help-query">
-			<div class="close-button"></div>
-			<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Как подавать заявку?</h4>
-			<hr class="hr-dashed">
-			<div class="twelve columns line-after line-before pad-bottom">
-				<div class="group-line pad">
-					<p>
-						Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Подать зявку</a>
-					</p>
-					<img src="<?php echo base_url('images/user/query-help.png');?>" alt="">
-				</div>
-				<div class="group-line pad">
-					<p>
-						После нажатия этой кнопки перед вами появится 
-						<a class="breadcum inline bold">окно</a>
-						с возможностью выбора параметров для подачи запроса
-					</p>
-					<img src="<?php echo base_url('images/user/query-help2.png');?>" alt="">
-				</div>
-				<div class="group-line pad">
-					<p>
-						Также вы можете добовлять дополнительные запчасти
-					</p>
-					<img src="<?php echo base_url('images/user/query-help3.png');?>" alt="">
-				</div>
-			</div>
-			<hr class="hr-dashed">
-		</div>
-		<!--end of form-->
-	</div>
 	<!--end of modals-->
 </div>
 
