@@ -278,26 +278,32 @@ modules["buttons-action-module"] = (function(){
 			data : {
 				id : dataId
 			},
-			success : function(){
-				if(dataType == "js-list"){
-					timeout(object.parent().parent().parent().parent());
-					object
-					.parent().parent()
-					.parent().removeClass("adv-line").addClass("pad-15-10")
-					.parent().addClass("color-r-removed");
-					object.hide();
-					object.parent().parent()
-					.html("<span class='bold font-size-12'>Удалено</span>");
+			success : function(res){
+				if(res == 0){
+					if(dataType == "js-list"){
+						timeout(object.parent().parent().parent().parent());
+						object
+						.parent().parent()
+						.parent().removeClass("adv-line").addClass("pad-15-10")
+						.parent().addClass("color-r-removed");
+						object.hide();
+						object.parent().parent()
+						.html("<span class='bold font-size-12'>Удалено</span>");
+					}
+					else if(dataType == "js-table"){
+						timeout(object.parent().parent());
+						object
+						.parent().parent().removeClass("adv-line").addClass("pad-15-10")
+						.removeClass("hover-white").addClass("color-r-removed")
+						object.hide();
+					}
+					else
+						alert("Все прошло успешно!");
 				}
-				else if(dataType == "js-table"){
-					timeout(object.parent().parent());
-					object
-					.parent().parent().removeClass("adv-line").addClass("pad-15-10")
-					.removeClass("hover-white").addClass("color-r-removed")
-					object.hide();
+				else{
+					alert("Произошла ошибка, страница будет перезагружена!");
+					document.location.reload();
 				}
-				else
-					alert("Все прошло успешно!");
 			}
 		});
 	}
