@@ -387,4 +387,14 @@ class Main_model extends CI_Model {
 		$this->db->limit(1);
 		return $this->db->get('user_queries')->row();
 	}
+
+	function send_message(){
+		$arr = array(
+					'title'=>$_POST['title'],
+					'mail'=>$_POST['mail'],
+					'content'=>$_POST['content'],
+					'sender_id'=>$this->session->userdata('id'),
+					'sender_type'=>$this->session->userdata('type'));
+		$this->db->insert('user_messages',$arr);
+	}
 }

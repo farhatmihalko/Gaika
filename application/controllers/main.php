@@ -764,10 +764,11 @@ class Main extends CI_Controller {
 
 		$this->form_validation->set_rules('mail','Ваш E-mail вашего друга','valid_email|required');
 		$this->form_validation->set_rules('title','Заголовок','required');
-		$this->form_validation->set_rules('text','Текст сообщения','required');
+		$this->form_validation->set_rules('content','Текст сообщения','required');
 
 		if ($this->form_validation->run()){
-			$arr = array('contact_sended');
+			$this->main_model->send_message();
+			$arr = array('contact_sended' => true);
 			$this->session->set_userdata($arr);
 		}
 
