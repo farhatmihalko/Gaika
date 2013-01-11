@@ -548,6 +548,10 @@ modules["js-user-query-form-module"] = (function(){
 				type : "POST",
 				data : data,
 				success : function(res){
+					if(res == "2"){
+						alert("Введите правильный вин код!");
+						return false;
+					}
 					var st = false;
 					var mm = "";
 					for(var i = 0; i < res.length; i++)
