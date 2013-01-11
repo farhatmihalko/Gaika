@@ -531,6 +531,51 @@ modules["seller-view-module"] = (function(){
 	}
 	//private
 });
+
+modules["js-user-query-form-module"] = (function(){
+	var formName = {
+		get : function(){
+			return $("#js-user-query-form");
+		}
+	}
+	var init = function(){
+		formName.get().live("submit", function(){
+			var data = $(this).serialize();
+			var url = $(this).attr("action");
+			//place for ajax
+			$.ajax({
+				url : url,
+				type : "POST",
+				data : data,
+				success : function(res){
+					var st = false;
+					var mm = "";
+					for(var i = 0; i < res.length; i++)
+						if(res[i] == "1"){
+							st = true;
+							mm += (i+1);
+							mm += " ";
+						}
+					if(st){
+						alert("Возникли ошибки при подача запросов на части под номером" + mm);
+					}else if(res.length > 0 && st == false){
+						document.location.reload();
+					}
+					else
+						alert("Error answer is null");
+				}
+			});
+			return false;
+		});
+	}
+	var worker = function(){
+
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+});
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!

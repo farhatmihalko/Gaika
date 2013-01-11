@@ -4,7 +4,7 @@
 		<div class="modal-window shadow eight columns centered offset-by-two hide js-scroll" id="js-modal-user-query">
 			<div class="close-button"></div>
 			<div>
-				<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST">
+				<form action="<?php echo base_url('index.php/main/add_query');?>" method="POST" id="js-user-query-form">
 					<h4 class="line-after font-color-l-blue"><i class="icon-exchange pad-right"></i>Подача запроса</h4>
 					<hr class="hr-dashed">
 					<div class="twelve columns pad-bottom line-before">
