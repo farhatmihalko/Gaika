@@ -293,6 +293,18 @@ ul{
 	background-image: linear-gradient(top,#2F7EB6 0,#2271A9 100%);
 	text-decoration: none;
 }
+.dropdown-autocomplete{
+	width : 300px;
+	font-size : 16px;
+}
+.dropdown-autocomplete > li {
+	padding : 2px 0px;
+}
+.dropdown-autocomplete > li > a{
+	font-size : 15px;
+	padding : 4px 20px;
+	color : black;
+}
 /*modal window*/
 .js-scroll{
 	max-height : 450px;

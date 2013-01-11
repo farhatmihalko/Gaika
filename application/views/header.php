@@ -22,6 +22,7 @@
 		  })();
 		</script>
 		<script type="text/javascript" src="<?php echo $basePathJs;?>jquery.js"></script>
+		<script type="text/javascript" src="<?php echo $basePathJs;?>typehead.js"></script>
 		<script type="text/javascript" src="<?php echo $basePathJs;?>core.js"></script>
 		<script type="text/javascript" src="<?php echo $basePathJs;?>modules.js"></script>
 		<script type="text/javascript" src="<?php echo $basePathJs;?>ui.js"></script>
