@@ -31,7 +31,9 @@
 					Действия
 				</div>
 			</div>
-
+			<!--need to identify the height of first line-->
+			<div class="clearfix"></div>
+			<!--end-->
 			<?php
 				foreach($info as $key=>$value){
 			?>

@@ -427,8 +427,8 @@ class Main extends CI_Controller {
 		$data['queries'] = $queries;
 		
 		$this->load->view('header',$style);
-		$this->load->view('company/com_menu',$menu);
-		$this->load->view('company/com_info',$info);
+		$this->load->view('company/com_menu', $menu);
+		$this->load->view('company/com_info', $info);
 		$this->load->view('company/com_parts',$data);
 		$this->load->view('footer');
 	}

@@ -280,6 +280,7 @@ modules["buttons-action-module"] = (function(){
 			},
 			success : function(){
 				if(dataType == "js-list"){
+					timeout(object.parent().parent().parent().parent());
 					object
 					.parent().parent()
 					.parent().removeClass("adv-line").addClass("pad-15-10")
@@ -289,6 +290,7 @@ modules["buttons-action-module"] = (function(){
 					.html("<span class='bold font-size-12'>Удалено</span>");
 				}
 				else if(dataType == "js-table"){
+					timeout(object.parent().parent());
 					object
 					.parent().parent().removeClass("adv-line").addClass("pad-15-10")
 					.removeClass("hover-white").addClass("color-r-removed")
@@ -304,7 +306,12 @@ modules["buttons-action-module"] = (function(){
 		worker : worker
 	}
 	//extend
-
+	function timeout(object){
+		var time = 3000;
+		var timer = setTimeout(function(){
+			object.fadeOut("fast");
+		}, time);
+	}
 });
 
 
