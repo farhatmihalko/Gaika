@@ -273,7 +273,7 @@
   $.fn.typeahead.defaults = {
     source: []
   , items: 8
-  , menu: '<ul class="typeahead dropdown-menu"></ul>'
+  , menu: '<ul class="typeahead dropdown-menu dropdown-autocomplete"></ul>'
   , item: '<li><a href="#"></a></li>'
   , minLength: 1
   }
