@@ -29,7 +29,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function check_login(){
-		$admins = $this->admin_model->get_admins($this->input->post('login'));
+		$admins = $this->gaika_admin_model->get_admins($this->input->post('login'));
 		foreach ($admins as $obj) {
 			if ($this->compute_pass($this->input->post('pwd'),$obj->salt) == $obj->password){
 				$arr = array(
@@ -46,7 +46,7 @@ class Admin extends CI_Controller {
 	public function add_admin($login,$pwd){
 		$salt = $this->get_random_salt();
 		$pwd = $this->compute_pass($pwd,$salt);
-		$this->admin_model->add_admin($login,$pwd,$salt);
+		$this->gaika_admin_model->add_admin($login,$pwd,$salt);
 	}
 
 	public function main(){
