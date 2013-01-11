@@ -522,35 +522,42 @@ class Main extends CI_Controller {
 	public function add_query(){
 		if ($this->session->userdata('type')!='user')
 			redirect('main');
-		$car_mark = $_POST['car-mark'];
-		$car_model = $_POST['car-model'];
-		$car_year = $_POST['car-year'];
+		if (isset($_POST['car-mark']))
+			$car_mark = $_POST['car-mark'];
+		if (isset($_POST['car-model']))
+			$car_model = $_POST['car-model'];
+		if (isset($_POST['car-year']))
+			$car_year = $_POST['car-year'];
 		$city = $this->session->userdata('city');
-		$car_vincode = $_POST['car-vincode'];
-		$part_names = $_POST['part_name'];
-		$part_cats = $_POST['part_cat'];
-		$num = count($part_names);
+		if (isset($_POST['car-vincode']))
+			$car_vincode = $_POST['car-vincode'];
+		if (isset($_POST['part_name']))
+			$part_names = $_POST['part_name'];
+		if (isset($_POST['part_cat']))
+			$part_cats = $_POST['part_cat'];
 		if (!$this->vincode_check())
 			return;
-		$ans = 0;
+		$ans = '';
+		$num = count($part_names);
 		$bo = true;
 		if ($car_mark=="" || $car_vincode==""){
-			$ans=1;
+			for ($i=0;$i<$num;$i++)
+				$ans.='1';
 		} else
-		for ($i=1; $i <= count($part_names); $i++) {
+		for ($i=1; $i <= $num; $i++) {
 			$car_id = $this->main_model->get_car_id($car_mark,$car_model);
 			if (is_null($car_id)){
-				$ans = 1;
-			} else
-				if (!is_null($part_names[$i]) && !is_null($part_cats[$i]))
+				$ans .= '1';
+			} elseif (!is_null($part_names[$i]) && !is_null($part_cats[$i])){
 					$bo = $this->main_model->add_new_query($car_id,$part_names[$i],$car_year,$car_vincode,$city,$part_cats[$i]);
-				//echo $bo;
+			}	
 			if ($bo == false){
-				$ans=1;
+				$ans.='1';
+			} else {
+				$ans.='0';
 			}
 		}
-		//echo $ans;
-		redirect('main/view_my_queries');
+		echo $ans;
 	}
 
 	public function change_user_settings(){
