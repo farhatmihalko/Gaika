@@ -29,6 +29,9 @@
 .align-initial{
 	text-align: initial;
 }
+.align-right{
+	text-align: right;
+}
 .vertical-align-m{
 	vertical-align: middle;
 }

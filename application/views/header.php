@@ -117,7 +117,6 @@
 									<?php } 
 									else {?> 
 										<!--this is ?-->
-										<a href="<?php echo base_url();?>"><i class="icon-money pad-right"></i>Мой кошелек</a>
 										<a href="<?php echo base_url();?>index.php/main/find_queries"><i class="icon-cloud pad-right"></i>Мой кабинет</a>
 										<!--end of seller-->
 									<?php }
@@ -184,11 +183,12 @@
 				            		</a>
 				            	</li>
 				            	<li class="dropdown-divider"></li>
-											<li>
-												<a href="<?php echo base_url();?>">
-													<i class="icon-money pad-right"></i>Мой кошелек
-												</a>
-											</li>
+				            				<li>
+				            					<a href="<?php echo base_url("index.php/main/my_answers");?>">
+				            						<i class="icon-tag"></i>
+				            						Мой ответы
+				            					</a>
+				            				</li>
 											<li>
 												<a href="<?php echo base_url('index.php/main/change_seller_settings')?>">
 													<i class="icon-certificate pad-right"></i>Настройки профиля
@@ -246,7 +246,7 @@
 					</p>
 					<p>
 						1. Добавьте дополнительные данные о своей компании пройдя по 
-						<a href ="<?php echo base_url('index.php/main/view_seller_settings')?>">данной ссылке</a>
+						<a href ="<?php echo base_url('index.php/main/change_seller_settings')?>">данной ссылке</a>
 						или нажмите кнопку "настройки".
 						<br>
 						2. Вы можете оставлять свою цену и  комментарии к запчастям.
@@ -316,11 +316,11 @@
 					</p>
 					<p>
 						1. Для того чтобы сделать запрос по запчастям, нажмите кнопку 
-						<a class="pointer">"дать заявки"</a>
+						<a class="pointer breadcum inline bold">"дать заявки"</a>
 						<br>
-						2. В <a class="pointer">настройках</a> вы можете поменять свои личные данные
+						2. В <a class="pointer bold breadcum inline">настройках</a> вы можете поменять свои личные данные
 						<br>
-						3. Пройдя по ссылке <a class="pointer">"мои заявки"</a> вы сможете просмотреть свои заявки
+						3. Пройдя по ссылке <a class="pointer bold breadcum inline">"мои заявки"</a> вы сможете просмотреть свои заявки
 					</p>	
 			</div>	
 
