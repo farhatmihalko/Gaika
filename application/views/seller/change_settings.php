@@ -5,9 +5,6 @@
 				<li class="active">
 					<a href="<?php echo base_url('index.php/main/change_seller_settings');?>">Настройки профиля</a>
 				</li>
-				<li>
-					<a>Прочие настройки</a>
-				</li>
 			</ul>
 			<hr class="hr-dashed">
 		</div>

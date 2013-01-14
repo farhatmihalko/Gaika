@@ -704,7 +704,7 @@ class Main extends CI_Controller {
 			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
 			$this->load->view('header',$style);
-			$this->load->view('restore_password_view');
+			$this->load->view('restore_password');
 			$this->load->view('footer');
 		}
 	}
