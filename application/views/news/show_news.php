@@ -3,7 +3,7 @@
 ?>
 	<div class="twelve columns line-after hr-dashed pad-tb">
 		<h3>
-			<a class="pointer">
+			<a class="pointer font-color-b-180">
 				<?php
 					//new header
 					echo $row->title;
