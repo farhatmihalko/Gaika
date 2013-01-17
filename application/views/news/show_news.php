@@ -32,10 +32,16 @@
 				<a class="breadcum pointer inline a_type color-b-l">
 					Новости
 				</a>
+				<a class="breadcum pointer inline a_type color-b-l">
+					Запчасти
+				</a>
+				<a class="breadcum pointer inline a_type color-b-l">
+					DIV*
+				</a>
 			</div>
 
 			<div class="seven columns">
-				<div class="right breadcum">
+				<div class="right breadcum inline a_type">
 					<span class="pad-right">
 						Город : 
 						<?php
