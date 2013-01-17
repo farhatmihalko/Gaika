@@ -160,7 +160,9 @@
 .font-size-11{
 	font-size : 11px!important;
 }
-
+.font-size-1em{
+	font-size : 1.0em;
+}
 
 .hover-white:hover{
 	background: white;

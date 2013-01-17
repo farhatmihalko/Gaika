@@ -2,34 +2,56 @@
 	foreach($news as $row){
 ?>
 	<div class="twelve columns line-after hr-dashed pad-tb">
-		<h3>
-			<a class="pointer font-color-b-180">
-				<?php
-					//new header
-					echo $row->title;
-				?>
-			</a>
-		</h3>
-		<p>
-			<?php
-				//new content
-				echo $row->content;
-			?>
-		</p>
-		<span class="breadcum right inline">
-			<span class="pad-right">
-				Город : 
-				<?php
-					echo $row->city;
-				?>
-			</span>
-			<span>
-				Добавлено : 
-				<?php
-					echo $row->adding_date;
-				?>
-			</span>
-		</span>
+		<div class="row">
+
+			<div class="twelve columns">
+				<h3>
+					<a class="pointer font-color-b-180">
+						<?php
+							//new header
+							echo $row->title;
+						?>
+					</a>
+				</h3>
+			</div>
+
+			<div class="twelve columns">
+				<p class="font-size-1em">
+					<?php
+						//new content
+						echo $row->content;
+					?>
+				</p>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="four columns">
+				<a class="breadcum pointer inline a_type color-b-l">
+					Новости
+				</a>
+			</div>
+
+			<div class="seven columns">
+				<div class="right breadcum">
+					<span class="pad-right">
+						Город : 
+						<?php
+							echo $row->city;
+						?>
+					</span>
+					<span>
+						Добавлено : 
+						<?php
+							echo $row->adding_date;
+						?>
+					</span>
+				</div>
+			</div>
+		</div>
+
 	</div>
 <?php
 	}
@@ -48,6 +70,9 @@
 		</li>
 		<li data-target="3">
 			<a>......</a>
+		</li>
+		<li data-target="3">
+			<a>20</a>
 		</li>
 		<li data-target="3">
 			<a>Вперед  →</a>
