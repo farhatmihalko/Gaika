@@ -26,16 +26,16 @@
 
 		</div>
 
-		<div class="row">
+		<div class="row pad-top">
 
 			<div class="four columns">
-				<a class="breadcum pointer inline a_type color-b-l">
+				<a class="breadcum pointer inline a_type color-b-254">
 					Новости
 				</a>
 				<a class="breadcum pointer inline a_type color-b-l">
 					Запчасти
 				</a>
-				<a class="breadcum pointer inline a_type color-b-l">
+				<a class="breadcum pointer inline a_type color-b-254">
 					DIV*
 				</a>
 			</div>
