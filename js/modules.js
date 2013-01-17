@@ -580,6 +580,45 @@ modules["js-user-query-form-module"] = (function(){
 		worker : worker
 	}
 });
+
+modules["last-new-module"] = (function(){
+	var data = {
+		place : function(){
+			return $("#js-news-load-place");
+		}
+	}
+	var init = function(){
+		getAjax();
+	}
+	var worker = function(){
+
+	}
+	return {
+		initialize : init,
+		worker : worker
+	}
+	//private functions
+
+	function getAjax(){
+		var url = path.base_url() + "index.php/news/get_news";
+		var type = "POST";
+		var place = data.place();
+		$.ajax({
+			url : url,
+			type : type,
+			data : {
+				number : 10,
+				city : "Алматы"
+			},
+			success : function(HTML_RESULT){
+				place.html(HTML_RESULT);
+			},
+			error : function(errNumber){
+				console.log(errNumber);
+			}
+		})
+	}
+});
 /*
 	DO NOT REMOVE THIS, BECAUSE HERE START'S
 	ALL MODULES FROM REGISTRATED MODULES!

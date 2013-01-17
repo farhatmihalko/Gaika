@@ -18,4 +18,14 @@
 		</div>
 	<!--end of page content-->
 	</div>
+	<div class="line-after">
+		<!--here empty place-->
+	</div>
+	<div class="row pad-tb shadow">
+		<!--content of news-->
+		<div class="twelve columns" id="js-news-load-place">
+			
+		</div>
+		<!--end of content-->
+	</div>
 </div>

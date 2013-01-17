@@ -358,27 +358,31 @@ class Main_model extends CI_Model {
 
 	function add_news(){
 		$arr = array(
-					'title' => $_POST['title'],
-					'content' => $_POST['content'],
-					'city' => $_POST['city'],
-					);
-		$this->db->insert('news',$arr);
+			'title' => $_POST['title'],
+			'content' => $_POST['content'],
+			'city' => $_POST['city'],
+			);
+		$this->db->insert('news', $arr);
 	}
 
-	function get_news($num,$city){
+	function get_news($num,	$city){
 		$this->db->order_by('adding_date');
 		$this->db->limit($num);
 		$this->db->where('city',$city);
 		$res = $this->db->get('news')->result();
-		$ans = '<div class="new">';
-		foreach ($res as $obj) {
-			$ans.='<div class="one_new">';
-			$ans.='<h1>'.$obj->title.'</h1>';
-			$ans.='<div class="content">'.$obj->content.'</div>';
+		return $res;
+		/*
+			here is the example of use
+			$ans = '<div class="new">';
+			foreach ($res as $obj) {
+				$ans.='<div class="one_new">';
+				$ans.='<h1>'.$obj->title.'</h1>';
+				$ans.='<div class="content">'.$obj->content.'</div>';
+				$ans.='</div>';
+			}
 			$ans.='</div>';
-		}
-		$ans.='</div>';
-		return $ans;
+			return $ans;
+		*/
 	}
 
 	function get_car_date($vin){

@@ -1,3 +1,12 @@
+var path = {
+	base_url : function(){
+		return "http://localhost/Gaika/";
+	}
+}
+self.path = path;
+//descript of path controller
+
+
 var v8 = (function(){
 	//this is core definition
 	var modules = {}
@@ -127,5 +136,21 @@ function uiGarbase(){
 		$("#js-user-table").removeClass("a_type_cat");
 		$("#js-user-type-table").hide();
 		$("#js-user-type-list").fadeIn("fast");
+	});
+}
+
+
+function getLastNews_JSON_LAST(){
+	return false;
+	$.ajax({
+		url : "http://localhost/Gaika/index.php/news/getLastNews_JSON",
+		type : "POST",
+		data : {
+			"number" : "5",
+			"city"   : "Алматы"
+		},
+		success : function(_RESULT){
+
+		}
 	});
 }

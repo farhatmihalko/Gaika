@@ -181,6 +181,9 @@
 				            		<a href="<?php echo base_url('index.php/main/find_queries');?>" class="bold">
 				            			Поиск запчастей
 				            		</a>
+				            		<a class="pointer">
+				            			Новости
+				            		</a>
 				            	</li>
 				            	<li class="dropdown-divider"></li>
 				            				<li>
@@ -274,7 +277,7 @@
 							<p>
 								Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Искать запчасти</a>
 							</p>
-							<img src="<?php echo base_url('images/seller/how-use-1.png');?>" alt="">
+							<img src="<?php echo base_url('images/seller/how-use-1.PNG');?>" alt="">
 						</div>
 						<div class="group-line pad">
 							<p>
@@ -282,7 +285,7 @@
 								<a class="breadcum inline bold">окно</a>
 								с возможностью выбора параметров
 							</p>
-							<img src="<?php echo base_url('images/seller/how-use-2.png');?>" alt="">
+							<img src="<?php echo base_url('images/seller/how-use-2.PNG');?>" alt="">
 						</div>
 						<div class="group-line pad">
 							<p>
@@ -290,7 +293,7 @@
 								<a class="breadcum inline bold">результаты</a>
 								в удобном виде
 							</p>
-							<img src="<?php echo base_url('images/seller/how-use-3.png');?>" alt="">
+							<img src="<?php echo base_url('images/seller/how-use-3.PNG');?>" alt="">
 						</div>
 					</div>
 					<hr class="hr-dashed">
@@ -334,7 +337,7 @@
 						<p>
 							Для того чтобы начать поиск вы должны нажать кнопку <a class="breadcum inline bold">Подать зявку</a>
 						</p>
-						<img src="<?php echo base_url('images/user/query-help.png');?>" alt="">
+						<img src="<?php echo base_url('images/user/query-help.PNG');?>" alt="">
 					</div>
 					<div class="group-line pad">
 						<p>
@@ -342,13 +345,13 @@
 							<a class="breadcum inline bold">окно</a>
 							с возможностью выбора параметров для подачи запроса
 						</p>
-						<img src="<?php echo base_url('images/user/query-help2.png');?>" alt="">
+						<img src="<?php echo base_url('images/user/query-help2.PNG');?>" alt="">
 					</div>
 					<div class="group-line pad">
 						<p>
 							Также вы можете добовлять дополнительные запчасти
 						</p>
-						<img src="<?php echo base_url('images/user/query-help3.png');?>" alt="">
+						<img src="<?php echo base_url('images/user/query-help3.PNG');?>" alt="">
 					</div>
 				</div>
 				<hr class="hr-dashed">
