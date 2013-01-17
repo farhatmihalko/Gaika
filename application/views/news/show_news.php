@@ -34,3 +34,23 @@
 <?php
 	}
 ?>
+
+<div class="twelve columns line-before pad-top">
+	<ul class="about_list pad-left-big">
+		<li class="active" data-target="1">
+			<a>1</a>
+		</li>
+		<li data-target="2">
+			<a>2</a>
+		</li>
+		<li data-target="3">
+			<a>3</a>
+		</li>
+		<li data-target="3">
+			<a>......</a>
+		</li>
+		<li data-target="3">
+			<a>Вперед  →</a>
+		</li>
+	</ul>
+</div>
