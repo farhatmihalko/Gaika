@@ -404,4 +404,10 @@ class Main_model extends CI_Model {
 					'sender_type'=>$this->session->userdata('type'));
 		$this->db->insert('user_messages',$arr);
 	}
+
+	function find_news($token){
+		$this->db->like('title',$token);
+		$this->db->or_like('content',$token);
+		return $this->db->get('news')->result();
+	}
 }

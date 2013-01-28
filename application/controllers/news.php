@@ -23,6 +23,19 @@
 			//load the view with last news!
 			$this->load->view("news/show_news", $_QUERY_RESULT);
 		}
+		public function find_news(){
+			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs; $style['bool']=true;
+			$this->form_validation->set_rules('token','Запрос',"required");
+			if ($this->form_validation->run()){
+				$data['res'] = $this->main_model->find_news($_POST['token']);
+				$this->load->view('header');
+				$this->load->view('find_news_view',$data);
+				$this->load->view('footer');
+			}
+			$this->load->view('header');
+			$this->load->view('registration/index');
+			$this->load->view('footer');
+		}
 	}
 
 ?>
