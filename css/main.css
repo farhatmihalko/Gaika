@@ -37,7 +37,7 @@ p{
 	font-size : 1.1em;
 	margin-top : 10px;
 	margin-bottom : 10px;
-	line-height: 1.6em;
+	line-height: 1.625;
 }
 h1{
 	font-size : 1.8em;
@@ -410,3 +410,19 @@ ul{
 	min-height : 300px;
 }
 /*end of settings page*/
+
+
+/*
+	badges
+*/
+.badge{
+	color : white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .22);
+	background-color: #3878d8;
+	opacity: 0.5;
+	border-radius: 30px;
+	padding : 4px 10px;
+}
+.badge:hover{
+	opacity: 1;
+}

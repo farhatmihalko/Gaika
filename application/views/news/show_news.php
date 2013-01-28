@@ -29,13 +29,13 @@
 		<div class="row pad-top">
 
 			<div class="four columns">
-				<a class="breadcum pointer inline a_type color-b-254">
+				<a class="breadcum pointer inline badge">
 					Новости
 				</a>
-				<a class="breadcum pointer inline a_type color-b-l">
+				<a class="breadcum pointer inline a_type badge">
 					Запчасти
 				</a>
-				<a class="breadcum pointer inline a_type color-b-254">
+				<a class="breadcum pointer inline a_type badge">
 					DIV*
 				</a>
 			</div>
@@ -63,7 +63,7 @@
 	}
 ?>
 
-<div class="twelve columns line-before pad-top">
+<div class="twelve columns line-before pad-top align-center">
 	<ul class="about_list pad-left-big">
 		<li class="active" data-target="1">
 			<a>1</a>
