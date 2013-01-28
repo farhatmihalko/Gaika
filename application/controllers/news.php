@@ -1,7 +1,7 @@
 <?php
 
 	/*
-	**DESCRIOPT OF NEWS CLASS
+	**DESCRIPTION OF NEWS CLASS
 	*/
 	class News extends CI_Controller{
 		public function index(){

@@ -6,7 +6,7 @@ class Main extends CI_Controller {
 	public function index(){
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs; $style['bool']=true;
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('registration/index');
 		$this->load->view('footer');
 	}
@@ -20,7 +20,7 @@ class Main extends CI_Controller {
 			$data['adverts'] = $this->main_model->get_adverts();
 		$data['categories'] = $this->main_model->get_categories();
 		
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('adverts_view',$data);
 		$this->load->view('footer');
 	} 
@@ -92,7 +92,7 @@ class Main extends CI_Controller {
 			$data['message'] = $ans;
 			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
-			$this->load->view('header',$style);
+			$this->load->view('header/header',$style);
 			$this->load->view('main-login',$data);
 			$this->load->view('footer');
 		}
@@ -155,7 +155,7 @@ class Main extends CI_Controller {
 				$this->main_model->change_user_pass($this->session->userdata('id'),$pwd,$salt);
 		}
 			
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('cabinet/change_password_view');
 		$this->load->view('footer');
 	}
@@ -254,7 +254,7 @@ class Main extends CI_Controller {
 				$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 				$data['cities'] = $this->main_model->get_cities();
 
-				$this->load->view('header',$style);
+				$this->load->view('header/header',$style);
 				$this->load->view('registration/reg_user',$data);
 				$this->load->view('footer');
 			}else{
@@ -262,7 +262,7 @@ class Main extends CI_Controller {
 			$data['cities'] = $this->main_model->get_cities();
 			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
-			$this->load->view('header',$style);
+			$this->load->view('header/header',$style);
 			$this->load->view('registration/reg_user',$data);
 			$this->load->view('footer');
 		}
@@ -337,7 +337,7 @@ class Main extends CI_Controller {
 			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 			$data['cities'] = $this->main_model->get_cities();
 
-			$this->load->view('header',$style);
+			$this->load->view('header/header',$style);
 			$this->load->view('registration/reg_sell',$data);
 			$this->load->view('footer');
 		}
@@ -399,7 +399,7 @@ class Main extends CI_Controller {
 		$query['categories'] = $this->main_model->get_categories();
 		$query['cities'] = $this->main_model->get_cities();
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('cabinet/cab_menu' , $query);
 		$this->load->view('cabinet/cab_query', $data);
 		$this->load->view('cabinet/cab_setting', $person);
@@ -426,7 +426,7 @@ class Main extends CI_Controller {
 		$info['seller'] = $seller;
 		$data['queries'] = $queries;
 		
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('company/com_menu', $menu);
 		$this->load->view('company/com_info', $info);
 		$this->load->view('company/com_parts',$data);
@@ -500,7 +500,7 @@ class Main extends CI_Controller {
 		$data['categories'] = $this->main_model->get_categories();
 		$data['cities'] = $this->main_model->get_cities();
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('seller/sel_menu', $data);
 		$this->load->view('seller/sel_query', $result);
 		$this->load->view('footer');
@@ -572,7 +572,7 @@ class Main extends CI_Controller {
 		}
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('cabinet/change_settings');
 		$this->load->view('footer');
 	}
@@ -594,7 +594,7 @@ class Main extends CI_Controller {
 		$data['seller'] = $this->main_model->get_seller_by_id($this->session->userdata('id'));
 
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('seller/change_settings',$data);
 		$this->load->view('footer');
 	}
@@ -703,7 +703,7 @@ class Main extends CI_Controller {
 		else{
 			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
-			$this->load->view('header',$style);
+			$this->load->view('header/header',$style);
 			$this->load->view('restore_password');
 			$this->load->view('footer');
 		}
@@ -735,7 +735,7 @@ class Main extends CI_Controller {
 			$result['cars'] = $cars;
 			$style['basePathCss']=basePathCss;$style['basePathJs']=basePathJs;
 
-			$this->load->view('header',$style);
+			$this->load->view('header/header',$style);
 			$this->load->view('seller/sel_menu');
 			$this->load->view('seller/my_answers',$result);
 			$this->load->view('footer');
@@ -745,7 +745,7 @@ class Main extends CI_Controller {
 	public function about(){
 		$style['basePathCss'] = basePathCss; $style['basePathJs'] = basePathJs;
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('about_site');
 		$this->load->view('footer');
 	}
@@ -772,7 +772,7 @@ class Main extends CI_Controller {
 			$this->session->set_userdata($arr);
 		}
 
-		$this->load->view('header', $style);
+		$this->load->view('header/header', $style);
 		$this->load->view('contact_form');
 		$this->load->view('footer');
 	}
@@ -793,7 +793,7 @@ class Main extends CI_Controller {
 
 		$data['cities'] = $this->main_model->get_cities();
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('add_news_view',$data);
 		$this->load->view('footer');
 	}
@@ -819,7 +819,7 @@ class Main extends CI_Controller {
 			redirect('main/invite_success');
 		}
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('invite_friend_view');
 		$this->load->view('footer');
 	}
@@ -827,7 +827,7 @@ class Main extends CI_Controller {
 	public function invite_success(){
 		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
 
-		$this->load->view('header',$style);
+		$this->load->view('header/header',$style);
 		$this->load->view('invite_success_view');
 		$this->load->view('footer');
 	}
