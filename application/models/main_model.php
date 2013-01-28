@@ -365,8 +365,11 @@ class Main_model extends CI_Model {
 		$this->db->insert('news', $arr);
 	}
 
-	function get_news($num,	$city){
-		$this->db->order_by('adding_date');
+	function get_news($num,	$city, $sort){
+		if ($sort==1)
+			$this->db->order_by('adding_date',"asc");
+		if ($sort==0)
+			$this->db->order_by('adding_date',"desc");
 		$this->db->limit($num);
 		$this->db->where('city',$city);
 		$res = $this->db->get('news')->result();
