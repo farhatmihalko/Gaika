@@ -6,7 +6,7 @@
 
 			<div class="twelve columns">
 				<h3>
-					<a class="pointer font-color-b-180">
+					<a class="pointer article-title">
 						<?php
 							//new header
 							echo $row->title;

@@ -435,3 +435,11 @@ ul{
 	border-radius: 20px;
 	border : 2px solid #F6B079;
 }
+
+.article-title{
+	color : black;
+	font-size: 22px;
+	font-weight: normal;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+}
