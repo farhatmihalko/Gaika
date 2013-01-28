@@ -426,3 +426,12 @@ ul{
 .badge:hover{
 	opacity: 1;
 }
+
+.readmore{
+	color : #555E6C;
+	font-size: 12px;
+	font-weight: bold;
+	padding : 4px 10px;
+	border-radius: 20px;
+	border : 2px solid #F6B079;
+}

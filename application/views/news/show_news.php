@@ -29,19 +29,14 @@
 		<div class="row pad-top">
 
 			<div class="four columns">
-				<a class="breadcum pointer inline badge">
-					Новости
-				</a>
-				<a class="breadcum pointer inline a_type badge">
-					Запчасти
-				</a>
-				<a class="breadcum pointer inline a_type badge">
-					DIV*
-				</a>
+				<div class="align-left">
+					<a class="pointer readmore">Подробнее →</a>
+				</div>
 			</div>
 
-			<div class="seven columns">
-				<div class="right breadcum inline a_type">
+			<div class="five columns">
+				
+				<div class="breadcum right">
 					<span class="pad-right">
 						Город : 
 						<?php
@@ -55,7 +50,19 @@
 						?>
 					</span>
 				</div>
+					
+				<div class="right line-before">
+					<a class="breadcum pointer inline badge">
+						<i class="icon-tag pad-right"></i>Новости
+					</a>
+					<a class="breadcum pointer inline a_type badge">
+						<i class="icon-cog pad-right"></i>Запчасти
+					</a>
+				</div>	
+				
 			</div>
+
+			
 		</div>
 
 	</div>
