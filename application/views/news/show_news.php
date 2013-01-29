@@ -26,13 +26,19 @@
 				</h3>
 			</div>
 
+			<?php 
+			$categories = explode(',',$row->categories);
+			foreach ($categories as $key => $value) {
+				echo $value." ";
+			}?>
+
 			<div class="twelve columns">
 				<h3>
 					<a class="pointer article-title">
 						<?php
 							//new header
 							//echo "<img src='./imgs/phpC02A.tmp'/>";
-							echo "<img src='./imgs/".$row->news_file."'/>";
+							echo "<img src='/gaika/imgs/".$row->news_file."'/>";
 						?>
 					</a>
 				</h3>

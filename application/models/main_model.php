@@ -357,12 +357,14 @@ class Main_model extends CI_Model {
 	}
 
 	function add_news(){
+		$categories = implode(',', $_POST['categories']);
 		$arr = array(
 			'title' => $_POST['title'],
 			'content' => $_POST['content'],
 			'city' => $_POST['city'],
 			'news_file' => basename($_FILES['news_file']['tmp_name']),
-			'short_content' => $_POST['short_content']
+			'short_content' => $_POST['short_content'],
+			'categories' => $categories
 			);
 		$this->db->insert('news', $arr);
 	}

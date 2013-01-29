@@ -1,5 +1,5 @@
 <div class="page">
-	<?php if ($this->session->userdata('login')){?>
+	<?php if (!$this->session->userdata('login')){?>
 	<div class="row shadow pad-tb">
 	<!--page content-->
 		<div class="twelve columns pad-bottom">
