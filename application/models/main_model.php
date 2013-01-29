@@ -365,8 +365,11 @@ class Main_model extends CI_Model {
 		$this->db->insert('news', $arr);
 	}
 
-	function get_news($num,	$city){
-		$this->db->order_by('adding_date');
+	function get_news($num,	$city, $sort){
+		if ($sort==1)
+			$this->db->order_by('adding_date',"asc");
+		if ($sort==0)
+			$this->db->order_by('adding_date',"desc");
 		$this->db->limit($num);
 		$this->db->where('city',$city);
 		$res = $this->db->get('news')->result();
@@ -400,5 +403,11 @@ class Main_model extends CI_Model {
 					'sender_id'=>$this->session->userdata('id'),
 					'sender_type'=>$this->session->userdata('type'));
 		$this->db->insert('user_messages',$arr);
+	}
+
+	function find_news($token){
+		$this->db->like('title',$token);
+		$this->db->or_like('content',$token);
+		return $this->db->get('news')->result();
 	}
 }
