@@ -31,7 +31,8 @@
 					<a class="pointer article-title">
 						<?php
 							//new header
-							echo "<img src='upload/$row->news_file'/>";
+							//echo "<img src='./imgs/phpC02A.tmp'/>";
+							echo "<img src='./imgs/".$row->news_file."'/>";
 						?>
 					</a>
 				</h3>

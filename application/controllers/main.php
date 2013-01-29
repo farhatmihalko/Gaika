@@ -787,7 +787,7 @@ class Main extends CI_Controller {
 		$this->form_validation->set_rules('content','Содержание','required');
 		$this->form_validation->set_rules('short_content','Краткое содержание','required');
 		$this->form_validation->set_rules('city','Город','required');
-		$this->form_validation->set_rules('news_file','Изображение','check_file');
+		$this->form_validation->set_rules('news_file','Изображение','callback_check_file');
 
 		if ($this->form_validation->run()){
 			$this->main_model->add_news();
@@ -801,20 +801,21 @@ class Main extends CI_Controller {
 	}
 
 	public function check_file(){
+		$path = "./imgs/";
 		$valid_types = array("jpg","png","gif","jpeg","JPG","PNG","GIF","JPEG");
 		if (isset($_FILES['news_file'])){
-			if (is_uploaded_file($_FILES['news_files']['tmp_name'])){
+			if (is_uploaded_file($_FILES['news_file']['tmp_name'])){
 				$filename = basename($_FILES['news_file']['tmp_name']);
 				$ext = substr($_FILES['news_file']['name'], 
 					1 + strrpos($_FILES['news_file']['name'], "."));
 				if (!in_array($ext, $valid_types)) {
 					return false;
 				} else {
-						if (@move_uploaded_file($_FILES['tmp_name'], "/upload".$filename)) {
-							return true;
-						} else {
-							return false;
-						}
+					if (move_uploaded_file($_FILES['news_file']['tmp_name'], $path.$filename)) {
+						return true;
+					} else {
+						return false;
+					}
 				}
 			}else{
 				return false;
