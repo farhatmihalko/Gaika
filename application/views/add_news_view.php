@@ -1,7 +1,13 @@
-<?php echo validation_errors();
- echo $this->main_model->get_news(12,'Алматы');?>
-<?php echo form_open('main/add_news');?>
+<div class="page">
+	<div class="row shadow pad-tb">
+	<div class="twelve columns pad-bottom">
+<?php echo validation_errors();?>
+<?php echo form_open_multipart('main/add_news');?>
 	<input type="text" name="title" maxlength="250" placeholder="title"/><br/>
+	<input type="file" name="news_file"/>
+	<textarea name="short_content" type="text" cols="50" rows="10">
+		short content
+	</textarea><br/>
 	<textarea name="content" type="text" cols="50" rows="10">
 		content
 	</textarea><br/>
@@ -12,3 +18,6 @@
 	</select>
 	<input type="submit" value="Add news"/>
 </form>
+</div>
+</div>
+</div>

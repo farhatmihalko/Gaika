@@ -1,6 +1,6 @@
 var path = {
 	base_url : function(){
-		return "http://127.0.0.1/Gaika/";
+		return "http://localhost/Gaika/";
 	}
 }
 self.path = path;

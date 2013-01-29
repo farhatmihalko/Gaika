@@ -16,6 +16,30 @@
 			</div>
 
 			<div class="twelve columns">
+				<h3>
+					<a class="pointer article-title">
+						<?php
+							//new header
+							echo $row->short_content;
+						?>
+					</a>
+				</h3>
+			</div>
+
+			<div class="twelve columns">
+				<h3>
+					<a class="pointer article-title">
+						<?php
+							//new header
+							echo "<img src='upload/$row->news_file'/>";
+						?>
+					</a>
+				</h3>
+			</div>
+
+
+
+			<div class="twelve columns">
 				<p class="font-size-1em">
 					<?php
 						//new content

@@ -4,7 +4,7 @@ class Main extends CI_Controller {
 	
 
 	public function index(){
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs; $style['bool']=true;
+		$style = $this->getStyle(); $style['bool']=true;
 
 		$this->load->view('header/header',$style);
 		$this->load->view('registration/index');
@@ -12,7 +12,7 @@ class Main extends CI_Controller {
 	}
 
 	public function adverts(){
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 		$this->form_validation->set_rules('category','Категория','trim|xss_clean|required');
 		if ($this->form_validation->run())
 			$data['adverts'] = $this->main_model->get_adverts($_POST['category']);
@@ -90,7 +90,7 @@ class Main extends CI_Controller {
 		}
 		else{
 			$data['message'] = $ans;
-			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+			$style = $this->getStyle();
 
 			$this->load->view('header/header',$style);
 			$this->load->view('main-login',$data);
@@ -140,7 +140,7 @@ class Main extends CI_Controller {
 
 	public function change_password(){
 		
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
 		$this->form_validation->set_rules('old','Старый пароль','trim|xss_clean|callback_check_pass');
 		$this->form_validation->set_rules('new1','Новый пароль','trim|xss_clean');
@@ -251,7 +251,7 @@ class Main extends CI_Controller {
 			$this->session->set_userdata($sessiondata);
 			redirect(base_url('index.php/main/view_my_queries'));
 		} elseif($ans=='0'){
-				$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+				$style = $this->getStyle();
 				$data['cities'] = $this->main_model->get_cities();
 
 				$this->load->view('header/header',$style);
@@ -260,7 +260,7 @@ class Main extends CI_Controller {
 			}else{
 			$data['message'] = $ans;
 			$data['cities'] = $this->main_model->get_cities();
-			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+			$style = $this->getStyle();
 
 			$this->load->view('header/header',$style);
 			$this->load->view('registration/reg_user',$data);
@@ -326,7 +326,7 @@ class Main extends CI_Controller {
 			$this->session->set_userdata($sessiondata);
 			redirect(base_url('index.php/main/find_queries'));
 		} elseif($ans=='0'){
-				$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+				$style = $this->getStyle();
 
 				$data['cities'] = $this->main_model->get_cities();
 				$this->load->view('header',$style);
@@ -334,7 +334,7 @@ class Main extends CI_Controller {
 				$this->load->view('footer');
 			}else{
 			$data['message'] = $ans;
-			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+			$style = $this->getStyle();
 			$data['cities'] = $this->main_model->get_cities();
 
 			$this->load->view('header/header',$style);
@@ -366,7 +366,7 @@ class Main extends CI_Controller {
 
 	public function view_my_queries(){
 		
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
 		if ($this->session->userdata('type')!='user')
 			redirect('main');
@@ -410,7 +410,7 @@ class Main extends CI_Controller {
 		if ($this->session->userdata('type')!='user')
 			redirect('main');
 		
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 		$menu['id'] = $seller;
 		$answers = $this->main_model->get_seller_answers_by_vin($seller,$vin);
 		$seller = $this->main_model->get_seller_by_id($seller);
@@ -436,7 +436,7 @@ class Main extends CI_Controller {
 	public function find_queries(){
 		if ($this->session->userdata('type')!='seller')
 			redirect('main');
-		$style['basePathCss']= basePathCss; $style['basePathJs'] = basePathJs;
+		$style = $this->getStyle();
 		
 		$company = '';
 		$model = '';
@@ -570,7 +570,7 @@ class Main extends CI_Controller {
 		if ($this->form_validation->run() == TRUE){
 			$this->main_model->update_user_info();
 		}
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
 		$this->load->view('header/header',$style);
 		$this->load->view('cabinet/change_settings');
@@ -593,7 +593,7 @@ class Main extends CI_Controller {
 
 		$data['seller'] = $this->main_model->get_seller_by_id($this->session->userdata('id'));
 
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 		$this->load->view('header/header',$style);
 		$this->load->view('seller/change_settings',$data);
 		$this->load->view('footer');
@@ -701,7 +701,7 @@ class Main extends CI_Controller {
 			redirect('main/');
 		}
 		else{
-			$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+			$style = $this->getStyle();
 
 			$this->load->view('header/header',$style);
 			$this->load->view('restore_password');
@@ -733,7 +733,7 @@ class Main extends CI_Controller {
 			$result['queries'] = $queries;
 			$result['answers'] = $res;
 			$result['cars'] = $cars;
-			$style['basePathCss']=basePathCss;$style['basePathJs']=basePathJs;
+			$style = $this->getStyle();
 
 			$this->load->view('header/header',$style);
 			$this->load->view('seller/sel_menu');
@@ -743,7 +743,7 @@ class Main extends CI_Controller {
 	}
 
 	public function about(){
-		$style['basePathCss'] = basePathCss; $style['basePathJs'] = basePathJs;
+		$style = $this->getStyle();
 
 		$this->load->view('header/header',$style);
 		$this->load->view('about_site');
@@ -760,7 +760,7 @@ class Main extends CI_Controller {
 	}
 
 	public function contact_form(){
-		$style['basePathCss'] = basePathCss; $style['basePathJs'] = basePathJs;
+		$style = $this->getStyle();
 
 		$this->form_validation->set_rules('mail','Ваш E-mail вашего друга','valid_email|required');
 		$this->form_validation->set_rules('title','Заголовок','required');
@@ -781,11 +781,13 @@ class Main extends CI_Controller {
 		if ($this->session->userdata('type')!='admin')
 			redirect('main');
 		
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
-		$this->form_validation->set_rules('title','Title','required');
-		$this->form_validation->set_rules('content','Content','required');
-		$this->form_validation->set_rules('city','City','required');
+		$this->form_validation->set_rules('title','Заголовок','required');
+		$this->form_validation->set_rules('content','Содержание','required');
+		$this->form_validation->set_rules('short_content','Краткое содержание','required');
+		$this->form_validation->set_rules('city','Город','required');
+		$this->form_validation->set_rules('news_file','Изображение','check_file');
 
 		if ($this->form_validation->run()){
 			$this->main_model->add_news();
@@ -796,6 +798,30 @@ class Main extends CI_Controller {
 		$this->load->view('header/header',$style);
 		$this->load->view('add_news_view',$data);
 		$this->load->view('footer');
+	}
+
+	public function check_file(){
+		$valid_types = array("jpg","png","gif","jpeg","JPG","PNG","GIF","JPEG");
+		if (isset($_FILES['news_file'])){
+			if (is_uploaded_file($_FILES['news_files']['tmp_name'])){
+				$filename = basename($_FILES['news_file']['tmp_name']);
+				$ext = substr($_FILES['news_file']['name'], 
+					1 + strrpos($_FILES['news_file']['name'], "."));
+				if (!in_array($ext, $valid_types)) {
+					return false;
+				} else {
+						if (@move_uploaded_file($_FILES['tmp_name'], "/upload".$filename)) {
+							return true;
+						} else {
+							return false;
+						}
+				}
+			}else{
+				return false;
+			}
+		} else{
+			return false;
+		}
 	}
 
 	private function send_invite(){
@@ -810,7 +836,7 @@ class Main extends CI_Controller {
 	
 
 	public function invite_friend(){
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
 		$this->form_validation->set_rules('mail','E-mail вашего друга','valid_email|required');
 
@@ -825,12 +851,17 @@ class Main extends CI_Controller {
 	}
 
 	public function invite_success(){
-		$style['basePathCss']=basePathCss; $style['basePathJs']=basePathJs;
+		$style = $this->getStyle();
 
 		$this->load->view('header/header',$style);
 		$this->load->view('invite_success_view');
 		$this->load->view('footer');
 	}
 
+	private function getStyle(){
+		$style['basePathCss'] = basePathCss;
+		$style['basePathJs']  = basePathJs;
+		return $style;	
+	}
 }
 ?>

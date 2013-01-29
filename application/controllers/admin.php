@@ -32,7 +32,8 @@ class Admin extends CI_Controller {
 			if ($this->compute_pass($this->input->post('pwd'),$obj->salt) == $obj->password){
 				$arr = array(
 					'id' => $obj->id,
-					'login' => TRUE
+					'login' => TRUE,
+					'type' => 'admin'
 				);
 				$this->session->set_userdata($arr);
 				return true;
@@ -83,6 +84,9 @@ class Admin extends CI_Controller {
 		$style['basePathJs']  = basePathJs;
 		$style['bool'] = true;		
 		return $style;	
+	}
+	public function test(){
+		print_r($_POST);
 	}
 }
 ?>
