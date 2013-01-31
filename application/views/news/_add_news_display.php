@@ -25,6 +25,7 @@
 	<?php
 		$C_COUNTER = 0;
 		foreach($categories as $obj){
+			$C_COUNTER++;
 	?>
 		<input type="checkbox" id="checkbox-1-<?php echo $C_COUNTER;?>" class="regular-checkbox" name="categories[]">
 		<label for="checkbox-1-<?php echo $C_COUNTER;?>" style="top:4px;"></label>
@@ -37,23 +38,27 @@
 	<?php
 		}
 	?>
+	<hr class="hr-dashed line-after line-before">
+	<div class="pad-tb">
+		<select name="city">
+			<?php foreach ($cities as $obj) { 
+		        echo '<option value="'.$obj->name.'">'.$obj->name.'</option>';
+		    }?>
+		</select>
+	</div>
 </div>
-
-<input type="checkbox" id="checkbox-1-1" class="regular-checkbox" name="remember">
-<label for="checkbox-1-1" style="top:4px;"></label>
-<label for="checkbox-1-1">
-	&nbsp;Я продавец
-</label>
 
 <input type="file" name="news_file"/>
 
-
+<!--
 <?php foreach ($categories as $obj) {
 	echo "<input type='checkbox' name='categories[]' value='".$obj->name."'>".$obj->name."</option>";
 }?>
+
 <select name="city">
 	<?php foreach ($cities as $obj) { 
         echo '<option value="'.$obj->name.'">'.$obj->name.'</option>';
     }?>
 </select>
+-->
 <input type="submit" value="Добавить новость!"/>
