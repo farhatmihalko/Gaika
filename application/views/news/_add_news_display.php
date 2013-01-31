@@ -8,17 +8,13 @@
 	<label for="news-content-short" class="list-name">
 		<strong>Краткое содержание </strong> (обязательно)
 	</label>
-	<textarea name="short_content" id="news-content-short" cols="30" rows="10">
-		
-	</textarea>
+	<textarea name="short_content" id="news-content-short"></textarea>
 </div>
 <div class="line-before">
 	<label for="news-content-full" class="list-name">
 		<strong>Полное содержание </strong> (обязательно)
 	</label>
-	<textarea name="content" id="news-content-full" cols="30" rows="10">
-		
-	</textarea>
+	<textarea name="content" id="news-content-full"></textarea>
 </div>
 
 <div class="line-before field color-b-254">
@@ -46,8 +42,6 @@
 		?>
 	</div>
 	
-	
-	
 	<div class="pad-tb six columns">
 		<label for="" class="list-name">
 			Выберите город
@@ -58,23 +52,25 @@
 		    }?>
 		</select>
 	</div>
-
-	<hr class="hr-dashed line-after line-before">
-
+	<div class="clearfix"></div>
 </div>
 
 
 <input type="file" name="news_file" class="hide"/>
 
 <div class="twelve columns line-before">
-	<div class="six columns align-left">
-		<label for="js-addnews-form-submit" class="button btn btn-green">
-			Добавить новость
-		</label>
-		<input type="submit" class="button btn btn-green hide" value="Добавить новость" id="js-addnews-form-submit">
-	</div>
-	<div class="six columns align-right">
-		<a href="#" class="button btn">Отмена</a>
+	<hr class="hr-dashed line-before">
+	<br>
+	<div>
+		<div class="six columns align-left ">
+			<label for="js-addnews-form-submit" class="button btn btn-green">
+				Добавить новость
+			</label>
+			<input type="submit" class="button btn btn-green hide" value="Добавить новость" id="js-addnews-form-submit">
+		</div>
+		<div class="six columns align-right">
+			<a href="#" class="button btn">Отмена</a>
+		</div>
 	</div>
 </div>
 
