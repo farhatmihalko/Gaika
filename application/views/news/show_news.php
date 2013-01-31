@@ -17,7 +17,7 @@
 
 			<div class="twelve columns">
 				<p>
-					<a class="pointer">
+					<a class="pointer font-color-black">
 						<?php
 							//new header
 							echo $row->short_content;
