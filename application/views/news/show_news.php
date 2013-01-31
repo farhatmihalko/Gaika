@@ -16,14 +16,14 @@
 			</div>
 
 			<div class="twelve columns">
-				<h3>
-					<a class="pointer article-title">
+				<p>
+					<a class="pointer">
 						<?php
 							//new header
 							echo $row->short_content;
 						?>
 					</a>
-				</h3>
+				</p>
 			</div>
 
 			<div class="twelve columns">

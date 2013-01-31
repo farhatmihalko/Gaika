@@ -29,7 +29,8 @@
 			foreach($categories as $obj){
 				$C_COUNTER++;
 		?>
-			<input type="checkbox" id="checkbox-1-<?php echo $C_COUNTER;?>" class="regular-checkbox" name="categories[]">
+			<input type="checkbox" id="checkbox-1-<?php echo $C_COUNTER;?>" class="regular-checkbox" name="categories[]" 
+			value="<?php echo $obj->name;?>">
 			<label for="checkbox-1-<?php echo $C_COUNTER;?>" style="top:4px; right:-8px;"></label>
 			<label for="checkbox-1-<?php echo $C_COUNTER;?>" class="margin-right">
 				&nbsp; 
