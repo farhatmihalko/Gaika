@@ -64,7 +64,7 @@
 	<div>
 		<div class="six columns align-left ">
 			<label for="js-addnews-form-submit" class="button btn btn-green">
-				Добавить новость
+				<i class="icon-edit pad-right"></i>Добавить новость
 			</label>
 			<input type="submit" class="button btn btn-green hide" value="Добавить новость" id="js-addnews-form-submit">
 		</div>
