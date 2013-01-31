@@ -63,7 +63,20 @@
 
 </div>
 
-<input type="file" name="news_file"/>
+
+<input type="file" name="news_file" class="hide"/>
+
+<div class="twelve columns line-before">
+	<div class="six columns align-left">
+		<label for="js-addnews-form-submit" class="button btn btn-green">
+			Добавить новость
+		</label>
+		<input type="submit" class="button btn btn-green hide" value="Добавить новость" id="js-addnews-form-submit">
+	</div>
+	<div class="six columns align-right">
+		<a href="#" class="button btn">Отмена</a>
+	</div>
+</div>
 
 <!--
 <?php foreach ($categories as $obj) {
@@ -76,4 +89,3 @@
     }?>
 </select>
 -->
-<input type="submit" value="Добавить новость!"/>

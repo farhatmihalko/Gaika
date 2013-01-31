@@ -32,6 +32,9 @@
 .align-right{
 	text-align: right;
 }
+.align-left{
+	text-align: left;
+}
 .vertical-align-m{
 	vertical-align: middle;
 }
