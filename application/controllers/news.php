@@ -67,8 +67,8 @@
 			$data['cities'] = $this->main_model->get_cities();
 			$data['categories'] = $this->main_model->get_categories();
 
-			$this->load->view('header/header',$style);
-			$this->load->view('add_news_view',$data);
+			$this->load->view('header/header', $style);
+			$this->load->view('news/add_news_form', $data);
 			$this->load->view('footer');
 		}
 
