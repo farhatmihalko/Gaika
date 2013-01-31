@@ -8,13 +8,13 @@
 	<label for="news-content-short" class="list-name">
 		<strong>Краткое содержание </strong> (обязательно)
 	</label>
-	<textarea name="short_content" id="news-content-short"></textarea>
+	<textarea name="short_content" id="news-content-short" class="height-100px"></textarea>
 </div>
 <div class="line-before">
 	<label for="news-content-full" class="list-name">
 		<strong>Полное содержание </strong> (обязательно)
 	</label>
-	<textarea name="content" id="news-content-full" class="ckeditor height-300px"></textarea>
+	<textarea name="content" id="news-content-full" class="ckeditor"></textarea>
 </div>
 
 <div class="line-before field color-b-254">
