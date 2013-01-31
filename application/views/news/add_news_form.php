@@ -24,3 +24,18 @@
 		</div>
 	</div>
 </div>
+
+<div class="page">
+	<div class="row shadow pad-tb">
+		<div class="twelve columns">
+			<?php 
+				echo validation_errors();
+			?>
+			<?php 
+				echo form_open_multipart('news/add_news');
+			?>
+			
+			</form>
+		</div>
+	</div>
+</div>
