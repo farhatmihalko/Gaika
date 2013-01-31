@@ -57,7 +57,7 @@
 			$this->form_validation->set_rules('content','Содержание','required');
 			$this->form_validation->set_rules('short_content','Краткое содержание','required');
 			$this->form_validation->set_rules('city','Город','required');
-			$this->form_validation->set_rules('news_file','Изображение','callback_check_file');
+			//$this->form_validation->set_rules('news_file','Изображение','callback_check_file');
 			$this->form_validation->set_rules('categories','Категории','required');
 
 			if ($this->form_validation->run()){

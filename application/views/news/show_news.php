@@ -26,26 +26,6 @@
 				</h3>
 			</div>
 
-			<?php 
-			$categories = explode(',',$row->categories);
-			foreach ($categories as $key => $value) {
-				echo $value." ";
-			}?>
-
-			<div class="twelve columns">
-				<h3>
-					<a class="pointer article-title">
-						<?php
-							//new header
-							//echo "<img src='./imgs/phpC02A.tmp'/>";
-							echo "<img src='/gaika/imgs/".$row->news_file."'/>";
-						?>
-					</a>
-				</h3>
-			</div>
-
-
-
 			<div class="twelve columns">
 				<p class="font-size-1em">
 					<?php
@@ -83,12 +63,19 @@
 				</div>
 					
 				<div class="right line-before">
-					<a class="breadcum pointer inline badge">
-						<i class="icon-tag pad-right"></i>Новости
-					</a>
-					<a class="breadcum pointer inline a_type badge">
-						<i class="icon-cog pad-right"></i>Запчасти
-					</a>
+					<?php 
+						$categories = explode(',',$row->categories);
+						foreach ($categories as $key => $value) {
+					?>
+							<a class="breadcum pointer inline badge">
+								<i class="icon-tag pad-right"></i>
+								<?php
+									echo $value;
+								?>
+							</a>
+					<?php
+						}
+					?>
 				</div>	
 				
 			</div>

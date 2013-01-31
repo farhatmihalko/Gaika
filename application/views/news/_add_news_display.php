@@ -8,7 +8,7 @@
 	<label for="news-content-short" class="list-name">
 		<strong>Краткое содержание </strong> (обязательно)
 	</label>
-	<textarea name="short_content" id="news-content-short" class="height-100px"></textarea>
+	<textarea name="short_content" id="news-content-short" class="ckeditor"></textarea>
 </div>
 <div class="line-before">
 	<label for="news-content-full" class="list-name">
@@ -56,7 +56,9 @@
 </div>
 
 
-<input type="file" name="news_file" class="hide"/>
+<!--
+	<input type="file" name="news_file" class="hide"/>
+-->
 
 <div class="twelve columns line-before">
 	<hr class="hr-dashed line-before">
