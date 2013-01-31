@@ -22,30 +22,45 @@
 </div>
 
 <div class="line-before field color-b-254">
-	<?php
-		$C_COUNTER = 0;
-		foreach($categories as $obj){
-			$C_COUNTER++;
-	?>
-		<input type="checkbox" id="checkbox-1-<?php echo $C_COUNTER;?>" class="regular-checkbox" name="categories[]">
-		<label for="checkbox-1-<?php echo $C_COUNTER;?>" style="top:4px;"></label>
-		<label for="checkbox-1-<?php echo $C_COUNTER;?>">
-			&nbsp; 
-			<?php
-				echo $obj->name;
-			?>
+
+	<div class="pad-tb six columns">
+		<label for="" class="list-name">
+			Выберите категорию к которой будет относиться новость
 		</label>
-	<?php
-		}
-	?>
-	<hr class="hr-dashed line-after line-before">
-	<div class="pad-tb">
-		<select name="city">
+		<br>
+		<?php
+			$C_COUNTER = 0;
+			foreach($categories as $obj){
+				$C_COUNTER++;
+		?>
+			<input type="checkbox" id="checkbox-1-<?php echo $C_COUNTER;?>" class="regular-checkbox" name="categories[]">
+			<label for="checkbox-1-<?php echo $C_COUNTER;?>" style="top:4px; right:-8px;"></label>
+			<label for="checkbox-1-<?php echo $C_COUNTER;?>" class="margin-right">
+				&nbsp; 
+				<?php
+					echo $obj->name;
+				?>
+			</label>
+		<?php
+			}
+		?>
+	</div>
+	
+	
+	
+	<div class="pad-tb six columns">
+		<label for="" class="list-name">
+			Выберите город
+		</label>
+		<select name="city" class="eight">
 			<?php foreach ($cities as $obj) { 
 		        echo '<option value="'.$obj->name.'">'.$obj->name.'</option>';
 		    }?>
 		</select>
 	</div>
+
+	<hr class="hr-dashed line-after line-before">
+
 </div>
 
 <input type="file" name="news_file"/>
