@@ -14,7 +14,7 @@
 	<label for="news-content-full" class="list-name">
 		<strong>Полное содержание </strong> (обязательно)
 	</label>
-	<textarea name="content" id="news-content-full"></textarea>
+	<textarea name="content" id="news-content-full" class="ckeditor height-300px"></textarea>
 </div>
 
 <div class="line-before field color-b-254">
@@ -73,15 +73,3 @@
 		</div>
 	</div>
 </div>
-
-<!--
-<?php foreach ($categories as $obj) {
-	echo "<input type='checkbox' name='categories[]' value='".$obj->name."'>".$obj->name."</option>";
-}?>
-
-<select name="city">
-	<?php foreach ($cities as $obj) { 
-        echo '<option value="'.$obj->name.'">'.$obj->name.'</option>';
-    }?>
-</select>
--->

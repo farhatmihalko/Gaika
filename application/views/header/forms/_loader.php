@@ -25,3 +25,7 @@
 <script type="text/javascript" src="<?php echo $basePathJs;?>core.js"></script>
 <script type="text/javascript" src="<?php echo $basePathJs;?>modules.js"></script>
 <script type="text/javascript" src="<?php echo $basePathJs;?>ui.js"></script>
+
+
+<!--for admin-->
+<script type="text/javascript" src="<?php echo base_url("ckeditor/ckeditor.js");?>"></script>
