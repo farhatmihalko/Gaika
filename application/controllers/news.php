@@ -72,30 +72,60 @@
 			$this->load->view('footer');
 		}
 
-	public function check_file(){
-		$path = "./imgs/";
-		$valid_types = array("jpg","png","gif","jpeg","JPG","PNG","GIF","JPEG");
-		if (isset($_FILES['news_file'])){
-			if (is_uploaded_file($_FILES['news_file']['tmp_name'])){
-				$filename = basename($_FILES['news_file']['tmp_name']);
-				$ext = substr($_FILES['news_file']['name'], 
-					1 + strrpos($_FILES['news_file']['name'], "."));
-				if (!in_array($ext, $valid_types)) {
-					return false;
-				} else {
-					if (move_uploaded_file($_FILES['news_file']['tmp_name'], $path.$filename)) {
-						return true;
-					} else {
+		public function upload_image(){
+			if ($this->session->userdata('type')!='admin')
+				redirect('main');
+			
+			$style = $this->getStyle();
+
+			$this->form_validation->set_rules('news_file','Изображение','required|callback_check_file');
+
+			if ($this->form_validation->run()){
+				/*$image = $this->session->userdata('img_name');
+				$data['image'] = $image;
+				$this->session->unset_userdata('img_name');
+				$this->load->view('header/header', $style);
+				$this->load->view('news/upload_successful_view',$data);
+				$this->load->view('footer');*/
+				redirect(base_url());
+			} else{
+				$this->load->view('header/header', $style);
+				$this->load->view('news/upload_image_view');
+				$this->load->view('footer');
+			}
+		}
+
+		public function check_file(){
+			return true;
+			if (isset($_FILES['news_file']))
+				return true;
+			else
+				echo "NET";
+			$path = "./imgs/";
+			$valid_types = array("jpg","png","gif","jpeg","JPG","PNG","GIF","JPEG");
+			if (isset($_FILES['news_file'])){
+				if (is_uploaded_file($_FILES['news_file']['tmp_name'])){
+					$filename = basename($_FILES['news_file']['tmp_name']);
+					$ext = substr($_FILES['news_file']['name'], 
+						1 + strrpos($_FILES['news_file']['name'], "."));
+					if (!in_array($ext, $valid_types)) {
 						return false;
+					} else {
+						if (move_uploaded_file($_FILES['news_file']['tmp_name'], $path.$filename)) {
+							$arr = array('img_name'=>$filename);
+							$this->session->set_userdata($arr);
+							return true;
+						} else {
+							return false;
+						}
 					}
+				}else{
+					return false;
 				}
-			}else{
+			} else{
 				return false;
 			}
-		} else{
-			return false;
 		}
-	}
 
 }
 

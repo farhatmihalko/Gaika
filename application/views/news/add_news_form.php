@@ -5,7 +5,7 @@
 				echo validation_errors();
 			?>
 			<?php 
-				echo form_open_multipart('news/add_news');
+				echo form_open('news/add_news');
 			?>
 			<!--form-->
 			<?php

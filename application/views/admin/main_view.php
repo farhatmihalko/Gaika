@@ -20,6 +20,16 @@
 						echo count($sellers);
 					?>
 				</span>
+				<span class="breadcum">
+					<?php
+						echo '<a href="'.base_url("index.php/news/add_news").'">Добавить новость</a>';
+					?>
+				</span>
+				<span class="breadcum">
+					<?php
+						echo '<a href="'.base_url("index.php/news/upload_image").'">Загрузить иллюстрацию</a>';
+					?>
+				</span>
 				<hr class="hr-dashed">
 			</div>
 			

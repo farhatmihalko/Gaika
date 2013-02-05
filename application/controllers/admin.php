@@ -4,6 +4,8 @@ class Admin extends CI_Controller {
 	
 
 	public function index(){
+		if ($this->session->userdata('type')=='admin')
+			redirect(base_url('index.php/admin/main'));
 		$this->load->view(
 			'admin/header',
 			$this->getStyle()
